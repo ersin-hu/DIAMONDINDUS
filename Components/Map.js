@@ -1,24 +1,23 @@
 import * as React from "react";
 import MapView from "react-native-maps";
-import CurrentLocation from "./Components/CurrentLocation";
-import Map from "./Components/Map";
+import CurrentLocation from "./CurrentLocation";
 import {
-  StyleSheet,
-  Text,
-  View,
-  Dimensions,
-  Platform,
-  StatusBar,
+    StyleSheet,
+    Text,
+    View,
+    Dimensions,
+    Platform,
+    StatusBar,
 } from "react-native";
 
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Map/>
-    </View>
-  );
+export default function Map() {
+    return (
+        <View style={styles.container}>
+            <CurrentLocation/>
+        </View>
+    );
 }
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -35,5 +34,3 @@ const styles = StyleSheet.create({
         color: "#34495e",
     },
 });
-
-
