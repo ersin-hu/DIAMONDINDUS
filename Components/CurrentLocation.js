@@ -45,6 +45,7 @@ export default function App() {
     }
 
     return (
+
         <View style={styles.container}>
             <MapView
                 showsUserLocation
@@ -69,4 +70,6 @@ const styles = StyleSheet.create({
         height: Dimensions.get("window").height,
     },
 });
+
+//test push
 
