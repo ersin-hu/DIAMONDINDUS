@@ -2,12 +2,9 @@ import React, {useState, useEffect} from 'react';
 import {Platform, Text, View, StyleSheet, Dimensions} from 'react-native';
 import * as Location from 'expo-location';
 import MapView from "react-native-maps";
-import {FontAwesome} from '@expo/vector-icons';
+
 
 export default function App() {
-    // handleMapRegionChange = (mapRegion) => {
-    //     this.setState({mapRegion});
-    // };
 
     const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState(null);
@@ -50,17 +47,11 @@ export default function App() {
     return (
         <View style={styles.container}>
             <MapView
+                showsUserLocation
                 style={styles.mapStyle}
                 region={mapRegion}
-                // onRegionChange={this.handleMapRegionChange}
+                // onRegionChange={handleMapRegionChange}
             >
-                <MapView.Marker
-                    coordinate={mapRegion}
-                    title="My Marker"
-                    description="Some description"
-                >
-                    <FontAwesome name="circle" size={20} color="blue" />
-                </MapView.Marker>
             </MapView>
         </View>
     );
