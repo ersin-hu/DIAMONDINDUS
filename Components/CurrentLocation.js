@@ -8,7 +8,19 @@ export default function App() {
 
     const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState(null);
+    const [marginBottom, setMarginBottom] = useState(1)
+    const [paddingTop, setPaddingTop] = useState(1)
 
+
+
+    // const _handleMapRegionChange = function (mapRegion) {
+    //     setLocation({ mapRegion });
+    // };
+
+    const _onMapReady = function() {
+        setMarginBottom(0)
+        setPaddingTop(0)
+    }
     useEffect(() => {
         (async () => {
             let {status} = await Location.requestForegroundPermissionsAsync();
@@ -19,7 +31,7 @@ export default function App() {
 
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location);
-            console.log(location)
+            // console.log(location)
         })();
     }, []);
 
@@ -47,12 +59,19 @@ export default function App() {
     return (
 
         <View style={styles.container}>
+
             <MapView
+                style={{width: Dimensions.get("window").width,
+                    height: Dimensions.get("window").height,
+                    marginBottom: marginBottom}}
+                onMapReady={_onMapReady}
+                showsMyLocationButton ={true}
+                showsCompass={true}
                 showsUserLocation
-                style={styles.mapStyle}
                 region={mapRegion}
                 // onRegionChange={handleMapRegionChange}
             >
+
             </MapView>
         </View>
     );
@@ -60,14 +79,12 @@ export default function App() {
 
 const styles = StyleSheet.create({
     container: {
+        width: "100%",
+        height: "100%",
         flex: 1,
         backgroundColor: "#fff",
         alignItems: "center",
         justifyContent: "center",
-    },
-    mapStyle: {
-        width: Dimensions.get("window").width,
-        height: Dimensions.get("window").height,
     },
 });
 
