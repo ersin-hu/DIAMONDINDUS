@@ -1,6 +1,7 @@
 import * as React from "react";
 import MapView from "react-native-maps";
 import CurrentLocation from "./CurrentLocation";
+import POIscreen from "./POIscreen";
 import {
     StyleSheet,
     Text,
@@ -9,6 +10,7 @@ import {
     Platform,
     StatusBar,
 } from "react-native";
+
 
 export default function Map() {
     return (

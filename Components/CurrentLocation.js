@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {Platform, Text, View, StyleSheet, Dimensions} from 'react-native';
 import * as Location from 'expo-location';
-import MapView from "react-native-maps";
+import MapView, {Callout, Marker} from "react-native-maps";
+import POIscreen from "./POIscreen";
 
 
 export default function App() {
@@ -71,7 +72,7 @@ export default function App() {
                 region={mapRegion}
                 // onRegionChange={handleMapRegionChange}
             >
-
+               <POIscreen/>
             </MapView>
         </View>
     );
