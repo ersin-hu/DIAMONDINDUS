@@ -13,6 +13,7 @@ const POIscreen = () => {
                 longitude: marker.longitude
             }}
                     title={marker.title}
+                    description={marker.description}
             />
         ))
     );
