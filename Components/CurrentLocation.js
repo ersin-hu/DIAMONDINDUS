@@ -71,7 +71,7 @@ export default function App() {
                 region={mapRegion}
                 // onRegionChange={handleMapRegionChange}
             >
-               <POIscreen/>
+                <POIscreen/>
             </MapView>
         </View>
     );
@@ -87,4 +87,3 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
 });
-
