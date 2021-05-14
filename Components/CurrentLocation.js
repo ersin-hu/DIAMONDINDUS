@@ -4,7 +4,6 @@ import * as Location from 'expo-location';
 import MapView, {Callout, Marker} from "react-native-maps";
 import POIscreen from "./POIscreen";
 
-
 export default function App() {
 
     const [location, setLocation] = useState(null);

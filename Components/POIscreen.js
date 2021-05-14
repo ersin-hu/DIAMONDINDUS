@@ -3,24 +3,33 @@ import {Platform, Text, View, StyleSheet, Dimensions} from 'react-native';
 import * as Location from 'expo-location';
 import MapView, {Callout, Marker} from "react-native-maps";
 import {locations} from "./POIdata"
+import {Image} from "react-native";
 
 const POIscreen = () => {
     return (
 
         locations.map(marker => (
-            <Marker coordinate={{
+            <Marker
+                coordinate={{
                 latitude: marker.latitude,
-                longitude: marker.longitude
-            }}
-                    title={marker.title}
-                    description={marker.description}
-            />
+                longitude: marker.longitude}}
+
+                title={marker.title}
+                description={marker.description}
+                >
+                <Image style= {{width: 30, height:30, alignItems:"center"}} source={require('../assets/Diamand.png')}/>
+
+
+            </Marker>
+
         ))
     );
 }
 
 
 export default POIscreen
+
+
 //         <Marker
 //             coordinate={{
 //                 latitude: 52.226632,

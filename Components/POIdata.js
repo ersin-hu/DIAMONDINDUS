@@ -1,10 +1,10 @@
+
 export const locations =
         [{
             title: 'Centraal station',
             description:'Lorem Ipsum standard text',
             latitude: 52.226632,
             longitude: 5.180905,
-            markerImage: "POI.png"
         },
         {
             title: 'Marktplein',
