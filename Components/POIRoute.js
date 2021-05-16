@@ -8,10 +8,28 @@
 // const POIRoute = () => {
 //     const [locations] = useState([
 //         {
-//             markerID:0
+//             latitude: 52.226632,
+//             longitude: 5.180905,
 //         },
 //         {
-//             markerID:1
+//             latitude: 52.227195,
+//             longitude: 5.176825,
+//         },
+//         {
+//             latitude: 52.228599,
+//             longitude: 5.169506,
+//         },
+//         {
+//             latitude: 52.228599,
+//             longitude: 5.169506,
+//         },
+//         {
+//             latitude: 52.237214,
+//             longitude: 5.150271,
+//         },
+//         {
+//             latitude: 52.222164,
+//             longitude: 5.151416,
 //         },
 //     ]);  return (
 //         <View style={styles.container}>
@@ -23,8 +41,8 @@
 //                     latitudeDelta: 0.0622,
 //                     longitudeDelta: 0.0121,
 //                 }}>
-//                 <Marker coordinate={locations[0]} />
-//                 <Marker coordinate={locations[1]} />
+//                 <Marker coordinate={marker[0]} />
+//                 <Marker coordinate={marker[1]} />
 //                 <Polyline
 //                     coordinates={locations}
 //                     strokeColor="#000" // fallback for when `strokeColors` is not supported by the map-provider
