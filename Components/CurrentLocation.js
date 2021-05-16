@@ -3,6 +3,7 @@ import {Platform, Text, View, StyleSheet, Dimensions} from 'react-native';
 import * as Location from 'expo-location';
 import MapView, {Callout, Marker} from "react-native-maps";
 import POIscreen from "./POIscreen";
+import POIRoute from "./POIRoute";
 
 export default function App() {
 
@@ -71,6 +72,7 @@ export default function App() {
                 region={mapRegion}
                 // onRegionChange={handleMapRegionChange}
             >
+                <POIRoute/>
                 <POIscreen/>
             </MapView>
         </View>

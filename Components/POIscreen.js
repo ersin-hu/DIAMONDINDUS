@@ -18,8 +18,6 @@ const POIscreen = () => {
                 description={marker.description}
                 >
                 <Image style= {{width: 30, height:30, alignItems:"center"}} source={require('../assets/Diamand.png')}/>
-
-
             </Marker>
 
         ))

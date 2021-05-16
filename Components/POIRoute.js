@@ -1,9 +1,9 @@
 // import React, {useState, useEffect} from 'react';
 // import {Platform, Text, View, StyleSheet, Dimensions} from 'react-native';
 // import * as Location from 'expo-location';
-// import MapView, {Callout, Marker} from "react-native-maps";
 // import {locations} from "./POIdata";
 // import {Image} from "react-native";
+// import MapView, {Marker, Polyline} from 'react-native-maps';
 //
 // const POIRoute = () => {
 //     const [locations] = useState([
@@ -37,12 +37,14 @@
 //                 style={styles.maps}
 //                 initialRegion={{
 //                     latitude: locations [0].latitude,
-//                     longitude: coordinates[0].longitude,
+//                     longitude: locations[0].longitude,
 //                     latitudeDelta: 0.0622,
 //                     longitudeDelta: 0.0121,
 //                 }}>
-//                 <Marker coordinate={marker[0]} />
-//                 <Marker coordinate={marker[1]} />
+//                 <Marker coordinate={locations[0]} />
+//                 <Marker coordinate={locations[1]} />
+//                 <Marker coordiante={locations[2]} />
+//                 <Marker coordinate={locations[3]} />
 //                 <Polyline
 //                     coordinates={locations}
 //                     strokeColor="#000" // fallback for when `strokeColors` is not supported by the map-provider
@@ -53,6 +55,13 @@
 //         </View>
 //     );
 // };
-//
-//
+// const styles = StyleSheet.create({
+//     container: {
+//         flex: 1,
+//     },
+//     maps: {
+//         width: Dimensions.get('screen').width,
+//         height: Dimensions.get('screen').height,
+//     },
+// });
 // export default POIRoute
