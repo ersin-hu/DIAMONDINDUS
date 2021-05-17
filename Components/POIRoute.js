@@ -8,7 +8,7 @@ import {Image} from "react-native";
 const POIRoute = () => {
     return (
         locations.map(marker => (
-            <Polyline
+            <Polyline key={ Math.random().toString(36).substr(2, 9) }
                 coordinates={locations}
                 strokeColor="#000"
                 strokeColors={['#7F0000']}
@@ -16,5 +16,5 @@ const POIRoute = () => {
             />
         ))
     );
-}
+};
 export default POIRoute

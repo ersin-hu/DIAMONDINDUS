@@ -7,24 +7,30 @@ import {Image} from "react-native";
 import POIRoute from "./POIRoute";
 
 const POIscreen = () => {
-    return (
 
-        locations.map(marker => (
-            <Marker
-                coordinate={{
-                latitude: marker.latitude,
-                longitude: marker.longitude}}
+        return (
 
-                title={marker.title}
-                description={marker.description}
-                >
-                    <Image style={{width: 30, height: 30, alignItems: "center"}}
-                           source={require('../assets/Diamand.png')}/>
-                </Marker>
-                <POIRoute/>
-            </View>
-        ))
-    );
+            locations.map(marker => (
+                <View key={ Math.random().toString(36).substr(2, 9)}>
+
+
+                    <Marker
+                        coordinate={{
+                            latitude: marker.latitude,
+                            longitude: marker.longitude
+                        }}
+
+                        title={marker.title}
+                        description={marker.description}
+                    >
+                        <Image style={{width: 30, height: 30, alignItems: "center"}}
+                               source={require('../assets/Diamand.png')}/>
+                    </Marker>
+                    <POIRoute/>
+                </View>
+            ))
+        );
+
 }
 
 
