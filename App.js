@@ -3,14 +3,28 @@ import MapView from "react-native-maps";
 import CurrentLocation from "./Components/CurrentLocation";
 import Map from "./Components/Map";
 import {
-  StyleSheet,
-  Text,
-  View,
-  Dimensions,
-  Platform,
-  StatusBar,
+    StyleSheet,
+    Text,
+    View,
+    Dimensions,
+    Platform,
+    StatusBar,
 } from "react-native";
+import SelectRoute from "./Components/SelectRoute";
 
+
+// export default function App() {
+//     return (
+//         <View style = {styles.container}>
+//             {/*<View style={{zIndex: 2, position: 'absolute'}}>*/}
+//             {/*    /!*<SelectRoute/>*!/*/}
+//             {/*</View>*/}
+//             <View style={{zIndex: 1, position: 'absolute'}}>
+//                 <Map/>
+//             </View>
+//         </View>
+//     );
+// }
 
 export default function App() {
 
@@ -30,18 +44,34 @@ export default function App() {
       });
     
   });
-  return (
-    <View style={styles.container}>
-      <Map/>
-    </View>
-  );
+    return (
+
+        <View style={styles.container}>
+            <Map/>
+            <View style={{zIndex: 2, position: 'absolute', top: 5}}>
+                <SelectRoute/>
+            </View>
+        </View>
+    // <View style={styles.container}>
+    //     {/*<View style={{zIndex: 2, position: 'absolute', top: 5}}>*/}
+    //     {/*    <SelectRoute/>*/}
+    //     {/*</View>*/}
+    //     <View style={{zIndex: 1, position: 'absolute'}}>
+    //         <CurrentLocation/>
+    //     </View>
+    // </View>
+
+
+    );
 }
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
         // paddingTop: Constants.statusBarHeight,
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
         backgroundColor: "#ecf0f1",
     },
     paragraph: {
@@ -52,5 +82,4 @@ const styles = StyleSheet.create({
         color: "#34495e",
     },
 });
-
 
