@@ -13,6 +13,23 @@ import {
 
 
 export default function App() {
+
+  React.useEffect(() => {
+    //do something on load
+    console.log("Hey, I've loaded up");
+ 
+    fetch('http://192.168.2.70:8080/api/todoItems')
+    .then((response) => response.json())
+    .then(todoItems => {
+      console.log(todoItems);
+    })
+    .catch((error) => {
+      console.log('There has been a problem with your fetch operation: ' + error.message);
+       // ADD THIS THROW error
+        throw error;
+      });
+    
+  });
   return (
     <View style={styles.container}>
       <Map/>
