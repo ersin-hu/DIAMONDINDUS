@@ -20,6 +20,10 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.devsdiamantindustrie.diamantindustrie",
+      "config": {
+        "googleMaps": { "apiKey": "AIzaSyDoUFn1wuwgSXEwQaKBX_g2Ssh8mLoHBhc" }
+      },
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
