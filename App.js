@@ -43,7 +43,8 @@ export default function App() {
                 <Stack.Navigator initialRouteName="Map">
                     <Stack.Screen name="Home" component={MainScreen}/>
                     <Stack.Screen name="POIinfo" component={POIinfo} />
-                    <Stack.Screen name="Map" component={Map} />
+                    <Stack.Screen options={{headerShown: false}} name="Map" component={Map} />
+                    <Stack.Screen name="SelectRoute" component={SelectRoute} />
                 </Stack.Navigator>
             </NavigationContainer>
 

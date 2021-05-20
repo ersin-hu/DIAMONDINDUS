@@ -1,15 +1,17 @@
 import React, {useState, useEffect} from 'react';
-import {Platform, Text, View, StyleSheet, Dimensions, Image} from 'react-native';
+import {Platform, Text, View, StyleSheet, Dimensions, Image, Button, Pressable} from 'react-native';
 import * as Location from 'expo-location';
 import MapView, {Callout, Marker} from "react-native-maps";
 import POIscreen from "./POIscreen";
 import {locations} from "./POIdata";
 import POIRoute from "./POIRoute";
 // import POIRoute from "./POIRoute";
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import SelectRoute from "./SelectRoute";
 
-export default function Map({ navigation }) {
+
+export default function Map({navigation}) {
 
     const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState(null);
@@ -17,12 +19,11 @@ export default function Map({ navigation }) {
     const [paddingTop, setPaddingTop] = useState(1)
 
 
-
     // const _handleMapRegionChange = function (mapRegion) {
     //     setLocation({ mapRegion });
     // };
 
-    const _onMapReady = function() {
+    const _onMapReady = function () {
         setMarginBottom(0)
         setPaddingTop(0)
     }
@@ -61,16 +62,34 @@ export default function Map({ navigation }) {
         };
     }
 
+    const Stack = createStackNavigator();
+
     return (
 
         <View style={styles.container}>
+            {/*<View style={{zIndex: 2, position: 'absolute', bottom: 5}}  onPress={() => navigation.navigate('POIinfo')}>*/}
+            {/*    <SelectRoute/>*/}
+            {/*</View>*/}
+            {/*<View style={styles.SelectRoutebutton}>*/}
+            {/*<Pressable*/}
+            {/*    title="Go to Details"*/}
+            {/*    onPress={() => navigation.navigate('SelectRoute')}*/}
+            {/*/>*/}
+
+            {/*</View>*/}
+            <Pressable style={styles.SelectRoutebutton} onPress={() => navigation.navigate('SelectRoute')}>
+                <Text style={styles.text}> Selecteer een route </Text>
+            </Pressable>
+
 
             <MapView
-                style={{width: Dimensions.get("window").width,
+                style={{
+                    width: Dimensions.get("window").width,
                     height: Dimensions.get("window").height,
-                    marginBottom: marginBottom}}
+                    marginBottom: marginBottom
+                }}
                 onMapReady={_onMapReady}
-                showsMyLocationButton ={true}
+                showsMyLocationButton={true}
                 showsCompass={true}
                 showsUserLocation
                 region={mapRegion}
@@ -101,6 +120,7 @@ export default function Map({ navigation }) {
 
                 ))}
             </MapView>
+
         </View>
     );
 }
@@ -113,5 +133,27 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         alignItems: "center",
         justifyContent: "center",
+    },
+    SelectRoutebutton: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 12,
+        paddingHorizontal: 32,
+        borderRadius: 10,
+        elevation: 3,
+        backgroundColor: 'white',
+        zIndex: 2,
+        position: 'absolute',
+        bottom: 15,
+        borderColor: "green",
+        borderWidth: 3
+
+    },
+    text: {
+        fontSize: 16,
+        lineHeight: 21,
+        fontWeight: 'bold',
+        letterSpacing: 0.25,
+        color: 'green',
     },
 });
