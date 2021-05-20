@@ -1,6 +1,5 @@
 import * as React from "react";
 import MapView from "react-native-maps";
-import CurrentLocation from "./Components/Map";
 import MainScreen from "./Components/MainScreen";
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -14,6 +13,9 @@ import {
     StatusBar,
 } from "react-native";
 import SelectRoute from "./Components/SelectRoute";
+import POIinfo from "./Components/POIinfo";
+import Map from "./Components/Map";
+
 
 
 export default function App() {
@@ -40,8 +42,6 @@ export default function App() {
             <NavigationContainer>
                 <Stack.Navigator initialRouteName="Map">
                     <Stack.Screen name="Home" component={MainScreen}/>
-                    {/*<Stack.Screen name="SelectRoute" component={SelectRoute}/>*/}
-                    {/*<Stack.Screen name="POIscreen" component={POIscreen} />*/}
                     <Stack.Screen name="POIinfo" component={POIinfo} />
                     <Stack.Screen name="Map" component={Map} />
                 </Stack.Navigator>
@@ -51,16 +51,7 @@ export default function App() {
 
     );
 }
-// function HomeScreen() {
-//     return (
-//         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//             <Text>Home Screen</Text>
-//         </View>
-//     );
-{/*<View style={{zIndex: 2, position: 'absolute', top: 5}}>*/}
-{/*    <SelectRoute/>*/}
-{/*</View>*/}
-// }
+
 
 const Stack = createStackNavigator();
 
