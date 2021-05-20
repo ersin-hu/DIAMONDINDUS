@@ -2,13 +2,13 @@
 import {Platform, StatusBar, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import {Card} from 'react-native-elements';
-import POIRoute from "./POIRoute";
+// import POIRoute from "./POIRoute";
 
 
 
 export default function SelectRoute() {
     const onRouteClick = function() {
-        // return (<POIRoute/>);
+         // (<POIRoute/>);
         console.log("Route start maken")
     }
     return (

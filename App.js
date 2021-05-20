@@ -30,8 +30,8 @@ export default function App() {
 
   React.useEffect(() => {
     //do something on load
-    console.log("Hey, I've loaded up");
- 
+    console.log("Hey, I've loaded up")
+      //ip adress aanpassen naar eigen ip adress:8080 laten staan.
     fetch('http://192.168.2.70:8080/api/todoItems')
     .then((response) => response.json())
     .then(todoItems => {
