@@ -1,7 +1,10 @@
 import * as React from "react";
 import MapView from "react-native-maps";
-import CurrentLocation from "./Components/CurrentLocation";
-import Map from "./Components/Map";
+import CurrentLocation from "./Components/Map";
+import MainScreen from "./Components/MainScreen";
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
 import {
     StyleSheet,
     Text,
@@ -12,19 +15,6 @@ import {
 } from "react-native";
 import SelectRoute from "./Components/SelectRoute";
 
-
-// export default function App() {
-//     return (
-//         <View style = {styles.container}>
-//             {/*<View style={{zIndex: 2, position: 'absolute'}}>*/}
-//             {/*    /!*<SelectRoute/>*!/*/}
-//             {/*</View>*/}
-//             <View style={{zIndex: 1, position: 'absolute'}}>
-//                 <Map/>
-//             </View>
-//         </View>
-//     );
-// }
 
 export default function App() {
 
@@ -46,24 +36,43 @@ export default function App() {
   });
     return (
 
-        <View style={styles.container}>
-            <Map/>
-            <View style={{zIndex: 2, position: 'absolute', top: 5}}>
-                <SelectRoute/>
-            </View>
-        </View>
-    // <View style={styles.container}>
-    //     {/*<View style={{zIndex: 2, position: 'absolute', top: 5}}>*/}
-    //     {/*    <SelectRoute/>*/}
-    //     {/*</View>*/}
-    //     <View style={{zIndex: 1, position: 'absolute'}}>
-    //         <CurrentLocation/>
-    //     </View>
-    // </View>
+        // <View style={styles.container}>
+            <NavigationContainer>
+                <Stack.Navigator initialRouteName="Map">
+                    <Stack.Screen name="Home" component={MainScreen}/>
+                    {/*<Stack.Screen name="SelectRoute" component={SelectRoute}/>*/}
+                    {/*<Stack.Screen name="POIscreen" component={POIscreen} />*/}
+                    <Stack.Screen name="POIinfo" component={POIinfo} />
+                    <Stack.Screen name="Map" component={Map} />
+                </Stack.Navigator>
+            </NavigationContainer>
 
+        // </View>
 
     );
 }
+// function HomeScreen() {
+//     return (
+//         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//             <Text>Home Screen</Text>
+//         </View>
+//     );
+{/*<View style={{zIndex: 2, position: 'absolute', top: 5}}>*/}
+{/*    <SelectRoute/>*/}
+{/*</View>*/}
+// }
+
+const Stack = createStackNavigator();
+
+// function App() {
+//     return (
+//         <NavigationContainer>
+//             <Stack.Navigator>
+//                 <Stack.Screen name="Home" component={HomeScreen}/>
+//             </Stack.Navigator>
+//         </NavigationContainer>
+//     );
+// }
 
 const styles = StyleSheet.create({
     container: {
