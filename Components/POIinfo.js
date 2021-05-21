@@ -7,7 +7,7 @@ import POIRoute from "./POIRoute";
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-
+//DATA DOORSTUREN
 
 const POIinfo = ({navigation}) => {
     const image = {uri: 'https://images.pexels.com/photos/1029243/pexels-photo-1029243.jpeg?cs=srgb&dl=pexels-suntorn-somtong-1029243.jpg&fm=jpg'};
