@@ -24,7 +24,7 @@ export default function App() {
     //do something on load
     console.log("Hey, I've loaded up");
  
-    fetch('http://192.168.2.70:8080/api/todoItems')
+    fetch('http://192.168.68.120:8080/api/poi/Names')
     .then((response) => response.json())
     .then(todoItems => {
       console.log(todoItems);
@@ -37,7 +37,6 @@ export default function App() {
     
   });
     return (
-
         // <View style={styles.container}>
             <NavigationContainer>
                 <Stack.Navigator initialRouteName="Map">
