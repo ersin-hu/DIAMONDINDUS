@@ -115,7 +115,7 @@ export default function Map({navigation}) {
 
                         </Marker>
 
-                        <POIRoute/>
+                        {/*<POIRoute/>*/}
                     </View>
 
                 ))}

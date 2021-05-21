@@ -10,11 +10,16 @@ import {
     View,
     Dimensions,
     Platform,
-    StatusBar,
+    StatusBar, YellowBox,
 } from "react-native";
-import SelectRoute from "./Components/SelectRoute";
+
 import POIinfo from "./Components/POIinfo";
 import Map from "./Components/Map";
+import SelectRoutes from "./Components/SelectRoute";
+import { LogBox } from 'react-native';
+
+LogBox.ignoreLogs(['Require cycle:'])
+// YellowBox.ignoreWarnings(['Require cycle:']);
 
 
 
@@ -43,7 +48,7 @@ export default function App() {
                     <Stack.Screen name="Home" component={MainScreen}/>
                     <Stack.Screen name="POIinfo" component={POIinfo} />
                     <Stack.Screen options={{headerShown: false}} name="Map" component={Map} />
-                    <Stack.Screen name="SelectRoute" component={SelectRoute} />
+                    <Stack.Screen name="SelectRoute" component={SelectRoutes} />
                 </Stack.Navigator>
             </NavigationContainer>
 
