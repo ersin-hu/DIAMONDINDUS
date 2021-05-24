@@ -7,6 +7,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.226632,
             longitude: 5.180905,
+            image: require("../assets/POI.png"),
         },
         {
             markerID:1,
@@ -22,7 +23,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.228599,
             longitude: 5.169506,
-            markerImage: "POI.png"
+            image: require("../assets/Diamand.png")
         },
         {
             markerID:3,
@@ -30,7 +31,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.232658,
             longitude: 5.164909,
-            markerImage: "POI.png"
+            image: require("../assets/Diamand.png")
         },
         {
             markerID:4,
@@ -38,7 +39,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.237214,
             longitude: 5.150271,
-            markerImage: "POI.png"
+            image: require("../assets/Diamand.png")
         },
         {
             markerID:5,
@@ -46,7 +47,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.222164,
             longitude: 5.151416,
-            markerImage: "POI.png"
+            image: require("../assets/Diamand.png")
         },
         {
             markerID:6,
@@ -54,7 +55,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.200529,
             longitude: 5.152435,
-            markerImage: "POI.png"
+            image: require("../assets/Diamand.png")
         },
         {
             markerID:7,

@@ -9,11 +9,13 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 //DATA DOORSTUREN
 
-const POIinfo = ({navigation}) => {
-    const image = {uri: 'https://images.pexels.com/photos/1029243/pexels-photo-1029243.jpeg?cs=srgb&dl=pexels-suntorn-somtong-1029243.jpg&fm=jpg'};
+const POIinfo = ({navigation, route}) => {
+    // const image = {uri: 'https://images.pexels.com/photos/1029243/pexels-photo-1029243.jpeg?cs=srgb&dl=pexels-suntorn-somtong-1029243.jpg&fm=jpg'};
+    // const image = require(route.params.data[2].toString())
     const goBack = () => {
         navigation.goBack();
     }
+    console.log(route.params.data[2])
     React.useLayoutEffect(() => {
         navigation.setOptions({headerShown: false});
     }, [navigation]);
@@ -22,11 +24,11 @@ const POIinfo = ({navigation}) => {
 
         <View style={{backgroundColor: 'white', flex: 1}}>
             <ImageBackground
-                source={image}
+                source={route.params.data[2]}
                 style={styles.image}
                 imageStyle={{borderBottomLeftRadius: 30, borderBottomRightRadius: 30}}
             >
-                <Text style={styles.Tagline}>Discover HIlversum</Text>
+                <Text style={styles.Tagline}>{route.params.data[0]}</Text>
                 <Text style={styles.Placename}>Explore the Diamond</Text>
 
                 <TouchableOpacity onPress={goBack} style={{position: 'absolute', left:20, top:40,

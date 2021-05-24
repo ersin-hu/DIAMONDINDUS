@@ -11,7 +11,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import SelectRoute from "./SelectRoute";
 
 
-export default function Map({navigation}) {
+export default function Map({ navigation: { navigate } }) {
 
     const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState(null);
@@ -107,7 +107,7 @@ export default function Map({navigation}) {
 
                             title={marker.title}
                             description={marker.description}
-                            onPress={() => navigation.navigate('POIinfo')}
+                            onPress={() => navigate('POIinfo', {data: [marker.title, marker.description, marker.image]})}
                         >
                             <Image style={{width: 30, height: 30, alignItems: "center"}}
                                    source={require('../assets/Diamand.png')}/>
