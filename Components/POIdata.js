@@ -7,7 +7,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.226632,
             longitude: 5.180905,
-            image: require("../assets/POI.png"),
+            image: require("../assets/station.jpg"),
         },
         {
             markerID:1,
@@ -15,7 +15,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.227195,
             longitude: 5.176825,
-            image: require("../assets/Diamand.png"),
+            image: require("../assets/marktplein.jpg"),
         },
         {
             markerID:2,
@@ -23,7 +23,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.228599,
             longitude: 5.169506,
-            image: require("../assets/Diamand.png")
+            image: require("../assets/gemeentehuis.jpg")
         },
         {
             markerID:3,
@@ -31,7 +31,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.232658,
             longitude: 5.164909,
-            image: require("../assets/Diamand.png")
+            image: require("../assets/muziekcentrum.jpg")
         },
         {
             markerID:4,
@@ -39,7 +39,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.237214,
             longitude: 5.150271,
-            image: require("../assets/Diamand.png")
+            image: require("../assets/trompenberg.jpg")
         },
         {
             markerID:5,
@@ -47,7 +47,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.222164,
             longitude: 5.151416,
-            image: require("../assets/Diamand.png")
+            image: require("../assets/huisje.jpg")
         },
         {
             markerID:6,
@@ -55,7 +55,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.200529,
             longitude: 5.152435,
-            image: require("../assets/Diamand.png")
+            image: require("../assets/zonnestraal.jpg")
         },
         {
             markerID:7,
@@ -63,7 +63,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.208905,
             longitude: 5.178406,
-            image: require("../assets/Diamand.png")
+            image: require("../assets/slijptol.jpg")
         },
         {
             markerID:8,
@@ -71,7 +71,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.212886,
             longitude: 5.189491,
-            image: require("../assets/Diamand.png")
+            image: require("../assets/nike.jpg")
         },
         {
             markerID:9,
@@ -79,7 +79,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.224442,
             longitude: 5.181236,
-            image: require("../assets/Diamand.png")
+            image: require("../assets/schapenkamp.jpg")
         },
 
 

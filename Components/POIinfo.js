@@ -40,7 +40,7 @@ const POIinfo = ({navigation, route}) => {
 
                 <ScrollView style={{backgroundColor: 'white'}}>
                     <Text style={{padding: 14, fontSize: 20, fontWeight: 'bold'}}>
-                        About the place
+                        Informatie over deze locatie:
                     </Text>
                     <Text style={{paddingHorizontal: 14, fontSize: 14, fontWeight: 'normal',
                     opacity: 0.7, justifyContent: 'flex-start', textAlign: 'justify', lineHeight: 20}}>
