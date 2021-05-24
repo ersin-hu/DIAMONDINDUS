@@ -3,6 +3,7 @@ export const locations =
         [{
             markerID:0,
             title: 'Centraal station',
+            adres: 'Stationsplein 10, 1211 EX Hilversum',
             description:'Lorem Ipsum standard text',
             latitude: 52.226632,
             longitude: 5.180905,
@@ -13,7 +14,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.227195,
             longitude: 5.176825,
-            markerImage: "POI.png"
+            image: require("../assets/Diamand.png"),
         },
         {
             markerID:2,
@@ -61,7 +62,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.208905,
             longitude: 5.178406,
-            markerImage: "POI.png"
+            image: require("../assets/Diamand.png")
         },
         {
             markerID:8,
@@ -69,7 +70,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.212886,
             longitude: 5.189491,
-            markerImage: "POI.png"
+            image: require("../assets/Diamand.png")
         },
         {
             markerID:9,
@@ -77,7 +78,7 @@ export const locations =
             description:'Lorem Ipsum standard text',
             latitude: 52.224442,
             longitude: 5.181236,
-            markerImage: "POI.png"
+            image: require("../assets/Diamand.png")
         },
 
 
