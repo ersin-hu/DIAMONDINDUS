@@ -37,7 +37,6 @@ export default function Map({navigation: {navigate}}) {
         setRouteShow(true)
         setButtonStartRoute(true)
         setButtonSelectRoute(false)
-        console.log("Start route functie nog uitwerken (zoomen op locatie en navigatie starten(Twan))")
         // return(
         //     <POIRoute/>
         // )
