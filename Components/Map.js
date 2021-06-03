@@ -8,15 +8,17 @@ import POIRoute from "./POIRoute";
 // import POIRoute from "./POIRoute";
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import SelectRoute from "./SelectRoute";
 
 
-export default function Map({ navigation: { navigate } }) {
+export default function Map({navigation: {navigate}}) {
 
     const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState(null);
     const [marginBottom, setMarginBottom] = useState(1)
     const [paddingTop, setPaddingTop] = useState(1)
+    const [routeShow, setRouteShow] = useState(false);
+    const [buttonSelectRoute, setButtonSelectRoute] = useState(true);
+    const [buttonStartRoute, setButtonStartRoute] = useState(false);
 
 
     // const _handleMapRegionChange = function (mapRegion) {
@@ -27,6 +29,27 @@ export default function Map({ navigation: { navigate } }) {
         setMarginBottom(0)
         setPaddingTop(0)
     }
+
+    const onSelectRoute = function () {
+        // navigate.setOptions({headerShown: false})
+        // setButtonShow(!buttonShow)
+        // handleMapRegionChange()
+        setRouteShow(true)
+        setButtonStartRoute(true)
+        setButtonSelectRoute(false)
+        console.log("Start route functie nog uitwerken (zoomen op locatie en navigatie starten(Twan))")
+        // return(
+        //     <POIRoute/>
+        // )
+
+    }
+
+    const onStartRoute = function (){
+        setButtonStartRoute(false)
+        console.log("inzoom op locatie nog maken (Twan)")
+
+    }
+
     useEffect(() => {
         (async () => {
             let {status} = await Location.requestForegroundPermissionsAsync();
@@ -67,19 +90,16 @@ export default function Map({ navigation: { navigate } }) {
     return (
 
         <View style={styles.container}>
-            {/*<View style={{zIndex: 2, position: 'absolute', bottom: 5}}  onPress={() => navigation.navigate('POIinfo')}>*/}
-            {/*    <SelectRoute/>*/}
-            {/*</View>*/}
-            {/*<View style={styles.SelectRoutebutton}>*/}
-            {/*<Pressable*/}
-            {/*    title="Go to Details"*/}
-            {/*    onPress={() => navigation.navigate('SelectRoute')}*/}
-            {/*/>*/}
-
-            {/*</View>*/}
-            <Pressable style={styles.SelectRoutebutton} onPress={() => navigation.navigate('SelectRoute')}>
+            {buttonSelectRoute ? (
+            <Pressable style={styles.SelectRoutebutton} onPress={() => onSelectRoute()}>
                 <Text style={styles.text}> Selecteer een route </Text>
             </Pressable>
+            ): null}
+            {buttonStartRoute ? (
+                <Pressable style={styles.SelectRoutebutton} onPress={() => onStartRoute() }>
+                    <Text style={styles.text}> Start de route! </Text>
+                </Pressable>
+            ): null}
 
 
             <MapView
@@ -116,6 +136,9 @@ export default function Map({ navigation: { navigate } }) {
                         </Marker>
 
                         {/*<POIRoute/>*/}
+                        {routeShow ? (
+                            <POIRoute/>
+                        ) : null}
                     </View>
 
                 ))}
