@@ -1,14 +1,14 @@
 import React from "react";
 import {StyleSheet, Text, View, Image, TouchableOpacity} from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import MainScreen from "./Components/MainScreen";
-import POIinfo from "./Components/POIinfo";
+import MainScreen from "./MainScreen";
+import POIinfo from "./POIinfo";
 import {NavigationContainer} from '@react-navigation/native';
-import POIRoute from "./Components/POIRoute";
-import CustomNavigation from "./Components/CustomNavigation";
-import Map from "./Components/Map";
-import locationList from "./Components/locationList";
-import {ScreenNavigator} from "./Components/CustomNavigation";
+import POIRoute from "./POIRoute";
+import CustomNavigation from "./CustomNavigation";
+import Map from "./Map";
+import locationList from "./locationList";
+import {ScreenNavigator} from "./CustomNavigation";
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
@@ -37,7 +37,7 @@ const Tabs = () => {
             tabBarIcon: ({focused}) => (
             <View style={{alignItems: 'center', justifyContent: 'center', top:5}}>
                 <Image
-                    source={require('../DiamantIndustrieFE/assets/diamond-shape.png')}
+                    source={require('../assets/diamond-shape.png')}
 
                     resizeMode='contain'
                     style={{
@@ -58,7 +58,7 @@ const Tabs = () => {
                             tabBarIcon: ({focused}) => (
                                 <View style={{alignItems: 'center', justifyContent: 'center', top:5}}>
                                     <Image
-                                        source={require('../DiamantIndustrieFE/assets/book.png')}
+                                        source={require('../assets/book.png')}
                                         resizeMode='contain'
                                         style={{
                                             width: 25,
@@ -78,7 +78,7 @@ const Tabs = () => {
                             tabBarIcon: ({focused}) => (
                                 <View style={{alignItems: 'center', justifyContent: 'center', top:5}}>
                                     <Image
-                                        source={require('../DiamantIndustrieFE/assets/menu.png')}
+                                        source={require('../assets/menu.png')}
                                         resizeMode='contain'
                                         style={{
                                             width: 25,

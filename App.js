@@ -4,7 +4,7 @@ import MainScreen from "./Components/MainScreen";
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import Tabs from './tabs';
+import Tabs from './Components/tabs';
 import {
     StyleSheet,
     Text,
