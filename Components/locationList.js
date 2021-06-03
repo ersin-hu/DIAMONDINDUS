@@ -13,6 +13,9 @@ import {
 import {Feather} from "@expo/vector-icons";
 
 const locationList = ({ navigation }) => {
+    const goBack = () => {
+        navigation.goBack();
+    }
     return (
 
         <SafeAreaView  style={{backgroundColor: 'white', flex: 1}}>
@@ -23,7 +26,7 @@ const locationList = ({ navigation }) => {
             >
                 <Text style={styles.Placename}>Locaties</Text>
 
-                <TouchableOpacity style={{position: 'absolute', left:20, top:40,
+                <TouchableOpacity onPress={goBack} style={{position: 'absolute', left:20, top:40,
                     backgroundColor: '#ff6200', padding: 10, borderRadius: 40}}>
                     <Feather name='arrow-left' size={24} color='#fff' />
                 </TouchableOpacity>

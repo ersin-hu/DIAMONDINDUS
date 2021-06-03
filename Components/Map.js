@@ -65,8 +65,8 @@ export default function Map({navigation: {navigate}}) {
     }, []);
 
     let mapRegion = {
-        latitude: 52.155499,
-        longitude: 5.387740,
+        latitude: 52.2210452,
+        longitude: 5.1597742,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
     }
