@@ -1,11 +1,21 @@
 import React from "react";
-import {ImageBackground, Platform, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {
+    ImageBackground,
+    Platform,
+    SafeAreaView,
+    ScrollView,
+    StatusBar,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View
+} from "react-native";
 import {Feather} from "@expo/vector-icons";
 
 const locationList = ({ navigation }) => {
     return (
 
-        <View style={{backgroundColor: 'white', flex: 1}}>
+        <SafeAreaView  style={{backgroundColor: 'white', flex: 1}}>
             <ImageBackground
                 source={require("../assets/station.jpg")}
                 style={styles.image}
@@ -30,7 +40,7 @@ const locationList = ({ navigation }) => {
                 </Text>
             </ScrollView>
 
-        </View>
+        </SafeAreaView >
 
     );
 }

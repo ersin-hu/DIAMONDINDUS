@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Platform, Text, View, StyleSheet, Dimensions, Image, Button, Pressable} from 'react-native';
+import {Platform, Text, View, StyleSheet, Dimensions, Image, Button, Pressable, SafeAreaView} from 'react-native';
 import * as Location from 'expo-location';
 import MapView, {Callout, Marker} from "react-native-maps";
 import POIscreen from "./POIscreen";
@@ -89,14 +89,14 @@ export default function Map({navigation: {navigate}}) {
 
     return (
 
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             {buttonSelectRoute ? (
             <Pressable style={styles.SelectRoutebutton} onPress={() => onSelectRoute()}>
                 <Text style={styles.text}> Selecteer een route </Text>
             </Pressable>
             ): null}
             {buttonStartRoute ? (
-                <Pressable style={styles.SelectRoutebutton} onPress={() => onStartRoute() }>
+                <Pressable style={styles.StartRoutebutton} onPress={() => onStartRoute() }>
                     <Text style={styles.text}> Start de route! </Text>
                 </Pressable>
             ): null}
@@ -116,7 +116,7 @@ export default function Map({navigation: {navigate}}) {
                 // onRegionChange={handleMapRegionChange}
             >
                 {locations.map(marker => (
-                    <View key={Math.random().toString(36).substr(2, 9)}>
+                    <SafeAreaView  key={Math.random().toString(36).substr(2, 9)}>
 
 
                         <Marker
@@ -139,12 +139,12 @@ export default function Map({navigation: {navigate}}) {
                         {routeShow ? (
                             <POIRoute/>
                         ) : null}
-                    </View>
+                    </SafeAreaView >
 
                 ))}
             </MapView>
 
-        </View>
+        </SafeAreaView >
     );
 }
 
@@ -167,7 +167,22 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         zIndex: 2,
         position: 'absolute',
-        bottom: 15,
+        top: 30,
+        borderColor: "green",
+        borderWidth: 3
+
+    },
+    StartRoutebutton: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 12,
+        paddingHorizontal: 32,
+        borderRadius: 10,
+        elevation: 3,
+        backgroundColor: 'white',
+        zIndex: 2,
+        position: 'absolute',
+        bottom: 100,
         borderColor: "green",
         borderWidth: 3
 

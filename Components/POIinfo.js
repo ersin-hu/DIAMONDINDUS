@@ -1,5 +1,16 @@
 
-import {Platform, StatusBar, StyleSheet, Text, TouchableOpacity, View, Image, ImageBackground, ScrollView} from 'react-native';
+import {
+    Platform,
+    StatusBar,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
+    Image,
+    ImageBackground,
+    ScrollView,
+    SafeAreaView
+} from 'react-native';
 import React, {useState} from 'react';
 import {Feather} from '@expo/vector-icons'
 import {ScreenNavigator} from "./CustomNavigation";
@@ -23,7 +34,7 @@ const POIinfo = ({navigation, route}) => {
 
     return (
 
-        <View style={{backgroundColor: 'white', flex: 1}}>
+        <SafeAreaView  style={{backgroundColor: 'white', flex: 1}}>
             <ImageBackground
                 source={route.params.data[2]}
                 style={styles.image}
@@ -49,7 +60,7 @@ const POIinfo = ({navigation, route}) => {
                     </Text>
                 </ScrollView>
 
-        </View>
+        </SafeAreaView >
 
     );
 }
