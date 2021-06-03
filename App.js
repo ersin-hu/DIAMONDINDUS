@@ -4,6 +4,7 @@ import MainScreen from "./Components/MainScreen";
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
+import Tabs from './tabs';
 import {
     StyleSheet,
     Text,
@@ -12,9 +13,6 @@ import {
     Platform,
     StatusBar, YellowBox,
 } from "react-native";
-
-import POIinfo from "./Components/POIinfo";
-import Map from "./Components/Map";
 
 import { LogBox } from 'react-native';
 
@@ -42,22 +40,26 @@ export default function App() {
     
   });
     return (
+        <Tabs/>
         // <View style={styles.container}>
-            <NavigationContainer>
-                <Stack.Navigator initialRouteName="Map">
-                    <Stack.Screen name="Home" component={MainScreen}/>
-                    <Stack.Screen name="POIinfo" component={POIinfo} />
-                    <Stack.Screen options={{headerShown: false}} name="Map" component={Map} />
-                </Stack.Navigator>
-            </NavigationContainer>
+        //     <Tabs/>
+        //     <NavigationContainer>
+        //
+        //         <Stack.Navigator initialRouteName="Map">
+        //             <Stack.Screen name="Home" component={MainScreen}/>
+        //             <Stack.Screen name="POIinfo" component={POIinfo} />
+        //             <Stack.Screen options={{headerShown: false}} name="Map" component={Map} />
+        //             <Stack.Screen name="SelectRoute" component={SelectRoutes} />
+        //         </Stack.Navigator>
+        //     </NavigationContainer>
 
-        // </View>
+         // </View>
 
     );
 }
 
+const Stack = createStackNavigator()
 
-const Stack = createStackNavigator();
 
 // function App() {
 //     return (

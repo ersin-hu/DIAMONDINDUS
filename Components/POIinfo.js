@@ -2,6 +2,7 @@
 import {Platform, StatusBar, StyleSheet, Text, TouchableOpacity, View, Image, ImageBackground, ScrollView} from 'react-native';
 import React, {useState} from 'react';
 import {Feather} from '@expo/vector-icons'
+import {ScreenNavigator} from "./CustomNavigation";
 import {Card} from 'react-native-elements';
 import POIRoute from "./POIRoute";
 import {NavigationContainer} from '@react-navigation/native';
