@@ -5,6 +5,7 @@ import locationList from "./locationList";
 import MainScreen from "./MainScreen";
 import Map from "./Map";
 import StartScreen from "./StartScreen";
+import GameCamera from "./GameCamera";
 
 
 const Stack = createStackNavigator()
@@ -16,6 +17,7 @@ const CustomNavigation = () => {
                 <Stack.Screen name="POIinfo" component={POIinfo} />
                 <Stack.Screen options={{headerShown: false}} name="Map" component={Map} />
                 <Stack.Screen options={{headerShown: false}} name="StartScreen" component={StartScreen} />
+                <Stack.Screen name="GameCamera" component={GameCamera} />
             </Stack.Navigator>
     )
 }

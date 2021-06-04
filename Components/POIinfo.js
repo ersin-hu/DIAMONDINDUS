@@ -9,7 +9,7 @@ import {
     Image,
     ImageBackground,
     ScrollView,
-    SafeAreaView
+    SafeAreaView, Pressable
 } from 'react-native';
 import React, {useState} from 'react';
 import {Feather} from '@expo/vector-icons'
@@ -18,6 +18,7 @@ import {Card} from 'react-native-elements';
 import POIRoute from "./POIRoute";
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import GameCamera from "./GameCamera";
 
 //DATA DOORSTUREN
 
@@ -35,6 +36,7 @@ const POIinfo = ({navigation, route}) => {
     return (
 
         <SafeAreaView  style={{backgroundColor: 'white', flex: 1}}>
+
             <ImageBackground
                 source={route.params.data[2]}
                 style={styles.image}
@@ -58,6 +60,9 @@ const POIinfo = ({navigation, route}) => {
                     opacity: 0.7, justifyContent: 'flex-start', textAlign: 'justify', lineHeight: 20}}>
                         {route.params.data[1]}
                     </Text>
+                    <Pressable style={styles.StartButton} onPress={() => navigation.navigate(GameCamera)}>
+                        <Text style={styles.ButtonText}>Start!</Text>
+                    </Pressable>
                 </ScrollView>
 
         </SafeAreaView >
@@ -89,7 +94,26 @@ const POIinfo = ({navigation, route}) => {
             fontWeight: 'bold',
             paddingHorizontal: 14,
             marginBottom: 30
-        }
+        },
+        StartButton: {
+            alignItems: 'center',
+            justifyContent: 'center',
+            paddingVertical: 12,
+            paddingHorizontal: 32,
+            borderRadius: 10,
+            elevation: 3,
+            backgroundColor: 'white',
+            zIndex: 2,
+            position: 'absolute',
+            bottom: 100,
+            borderColor: "green",
+            borderWidth: 3
+
+        },
+        ButtonText: {
+            fontSize: 20,
+            textAlign: 'center',
+        },
     });
 
 export default POIinfo;
