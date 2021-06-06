@@ -91,12 +91,22 @@ export default function Map({navigation: {navigate}}) {
         <SafeAreaView style={styles.container}>
                 {buttonSelectRoute ? (
             <Pressable style={styles.SelectRoutebutton} onPress={() => onSelectRoute()}>
+                {/*<WiggleBox*/}
+                {/*    active={true}*/}
+                {/*    duration={200}*/}
+                {/*    >*/}
                 <Text style={styles.text}> Selecteer een route </Text>
+                {/*</WiggleBox>*/}
             </Pressable>
             ): null}
             {buttonStartRoute ? (
                 <Pressable style={styles.StartRoutebutton} onPress={() => onStartRoute() }>
+                    {/*<WiggleBox*/}
+                    {/*    active={true}*/}
+                    {/*    duration={200}*/}
+                    {/*>*/}
                     <Text style={styles.text}> Start de route! </Text>
+                    {/*</WiggleBox>*/}
                 </Pressable>
             ): null}
 
