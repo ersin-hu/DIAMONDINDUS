@@ -26,7 +26,7 @@ export default function App() {
   React.useEffect(() => {
     //do something on load
     console.log("Hey, I've loaded up");
- 
+
     fetch('http://192.168.68.120:8080/api/poi/Names')
     .then((response) => response.json())
     .then(todoItems => {

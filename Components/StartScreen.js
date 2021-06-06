@@ -21,7 +21,42 @@ export default function StartScreen({navigation: {navigate}}) {
             alert("Voer je leeftijd in")
         }
         if (inputName.length > 2 && inputAge < 110 && inputAge > 0 && inputAge != null) {
-            navigate('Map')
+
+                let requestOptions = {
+                    method: 'GET',
+                    redirect: 'follow'
+                };
+                let callResult = "false";
+
+                //todo fix infinite loop Created by Roy, Ersin possibly knows a fix
+                fetch("http://81.169.131.185:8080/api/user?username=" + inputName + "&age=" + inputAge, requestOptions)
+                    .then(response => response.text())
+                    .then((result) => {
+                        console.log(result)
+                        callResult = result.toString();
+                        console.log(callResult)
+                        if (callResult === "true") {
+                            navigate('Map')
+                        }
+                    })
+                    .catch(error => console.log('error', error));
+
+                if (callResult === "true") {
+                    navigate('Map')
+                } else {
+
+                    let postRequestOptions = {
+                        method: 'POST',
+                        redirect: 'follow'
+                    };
+                    //todo fix infinite loop Created by Roy, Ersin possibly knows a fix
+                    fetch("http://81.169.131.185:8080/api/user?username=" + inputName + "&age=" + inputAge, postRequestOptions)
+                        .then(response => response.text())
+                        .then(result => console.log(result))
+                        .catch(error => console.log('error', error));
+                    console.log("Account created")
+                }
+
         }
         console.log("input name: " + inputName)
         console.log("input age: " + inputAge)
