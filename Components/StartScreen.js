@@ -56,7 +56,7 @@ export default function StartScreen({navigation: {navigate}}) {
                         .catch(error => console.log('error', error));
                     console.log("Account created")
                 }
-
+            alert("Voordat je kunt beginnen aan de Hilversum HistoryHunt. Moet je natuurlijk weten hoe het spel begint. de Hilversum History Hunt is een soort vossenjacht. De bedoeling is dat je de route volgt omweg naar een diamant. Eenmaal bij een diamant aangekomen, kun je kans maken op prijzen. Om te beginnen druk op OK.")
         }
         console.log("input name: " + inputName)
         console.log("input age: " + inputAge)

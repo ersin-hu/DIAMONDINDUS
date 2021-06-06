@@ -8,7 +8,7 @@ import POIRoute from "./POIRoute";
 // import POIRoute from "./POIRoute";
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-
+import WiggleBox from "react-native-wiggle-box";
 
 export default function Map({navigation: {navigate}}) {
 
@@ -89,7 +89,7 @@ export default function Map({navigation: {navigate}}) {
     return (
 
         <SafeAreaView style={styles.container}>
-            {buttonSelectRoute ? (
+                {buttonSelectRoute ? (
             <Pressable style={styles.SelectRoutebutton} onPress={() => onSelectRoute()}>
                 <Text style={styles.text}> Selecteer een route </Text>
             </Pressable>
@@ -99,7 +99,6 @@ export default function Map({navigation: {navigate}}) {
                     <Text style={styles.text}> Start de route! </Text>
                 </Pressable>
             ): null}
-
 
             <MapView
                 style={{
@@ -169,7 +168,6 @@ const styles = StyleSheet.create({
         top: 30,
         borderColor: "green",
         borderWidth: 3
-
     },
     StartRoutebutton: {
         alignItems: 'center',
@@ -183,7 +181,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 100,
         borderColor: "green",
-        borderWidth: 3
+        borderWidth: 3,
 
     },
     text: {
