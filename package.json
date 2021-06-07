@@ -35,6 +35,7 @@
     "@react-navigation/native": "^5.9.4",
     "expo-camera": "^11.0.3",
     "expo-permissions": "^12.0.1",
+    "expo-task-manager": "^9.1.0",
     "reactn": "^2.2.7"
   },
   "private": true

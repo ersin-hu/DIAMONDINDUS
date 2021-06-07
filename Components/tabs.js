@@ -67,7 +67,7 @@ const Tabs = () => {
                                         }}
                                     />
                                     <Text style={{color: focused ? '#1d191b' : '#748c94', fontSize: 12}}>
-                                        Info
+                                        Overzicht locaties
                                     </Text>
                                 </View>
                             ),

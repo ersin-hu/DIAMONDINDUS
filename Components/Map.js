@@ -9,6 +9,8 @@ import POIRoute from "./POIRoute";
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import WiggleBox from "react-native-wiggle-box";
+import * as TaskManager from "expo-task-manager";
+import {LocationGeofencingEventType} from "expo-location";
 
 export default function Map({navigation: {navigate}}) {
 
@@ -19,6 +21,7 @@ export default function Map({navigation: {navigate}}) {
     const [routeShow, setRouteShow] = useState(false);
     const [buttonSelectRoute, setButtonSelectRoute] = useState(true);
     const [buttonStartRoute, setButtonStartRoute] = useState(false);
+
 
 
     // const _handleMapRegionChange = function (mapRegion) {
@@ -59,8 +62,7 @@ export default function Map({navigation: {navigate}}) {
 
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location);
-            // console.log(location)
-        })();
+             })();
     }, []);
 
     let mapRegion = {
@@ -83,6 +85,28 @@ export default function Map({navigation: {navigate}}) {
             longitudeDelta: 0.0421,
         };
     }
+
+    // const Geofencing = function() {
+    //     console.log("geofencing")
+    //     // console.log(region)
+    //     Location.startGeofencingAsync("YOUR_TASK_NAME", ({data: {eventType, region}, error}) => {
+    //         region = ({
+    //             latitude: 52.226632,
+    //             longitude: 5.180905,
+    //             radius: 25,
+    //         });
+    //
+    //         if (error) {
+    //             // check `error.message` for more details.
+    //             return console.log("error message regel 97");
+    //         }
+    //         if (eventType === LocationGeofencingEventType.Enter) {
+    //             console.log("You've entered region:", region);
+    //         } else if (eventType === LocationGeofencingEventType.Exit) {
+    //             console.log("You've left region:", region);
+    //         }
+    //     }).then(console.log("fucked up"));
+    // }
 
     const Stack = createStackNavigator();
 
@@ -109,6 +133,11 @@ export default function Map({navigation: {navigate}}) {
                     {/*</WiggleBox>*/}
                 </Pressable>
             ): null}
+
+            {/*<Pressable style={styles.StartRoutebutton} onPress={() => Geofencing() }>*/}
+            {/*    <Text style={styles.text}> GEOFENCING </Text>*/}
+
+            {/*</Pressable>*/}
 
             <MapView
                 style={{

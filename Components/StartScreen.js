@@ -21,6 +21,7 @@ export default function StartScreen({navigation: {navigate}}) {
             alert("Voer je leeftijd in")
         }
         if (inputName.length > 2 && inputAge < 110 && inputAge > 0 && inputAge != null) {
+            // navigate('Map')
 
                 let requestOptions = {
                     method: 'GET',
