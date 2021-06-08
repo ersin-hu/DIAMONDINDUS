@@ -15,12 +15,11 @@ import React, {useState} from 'react';
 import {Feather} from '@expo/vector-icons'
 
 import GameCamera from "./GameCamera";
+import Quiz from "./Quiz";
 
 //DATA DOORSTUREN
 
 const POIinfo = ({navigation, route}) => {
-    // const image = {uri: 'https://images.pexels.com/photos/1029243/pexels-photo-1029243.jpeg?cs=srgb&dl=pexels-suntorn-somtong-1029243.jpg&fm=jpg'};
-    // const image = require(route.params.data[2].toString())
     const goBack = () => {
         navigation.goBack();
     }
@@ -56,10 +55,16 @@ const POIinfo = ({navigation, route}) => {
                     opacity: 0.7, justifyContent: 'flex-start', textAlign: 'justify', lineHeight: 20}}>
                         {route.params.data[1]}
                     </Text>
+                    <View>
                     <Pressable style={styles.StartButton} onPress={() => navigation.navigate(GameCamera)}>
                         <Text style={styles.ButtonText}>Start!</Text>
                     </Pressable>
+                    </View>
+                    <View>
+                        <Quiz/>
+                    </View>
                 </ScrollView>
+
 
         </SafeAreaView >
 

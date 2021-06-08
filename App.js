@@ -15,6 +15,12 @@ import {
 } from "react-native";
 
 import { LogBox } from 'react-native';
+import CustomNavigation from "./Components/CustomNavigation";
+import POIinfo from "./Components/POIinfo";
+import Map from "./Components/Map";
+import StartScreen from "./Components/StartScreen";
+import GameCamera from "./Components/GameCamera";
+import GameAnswer from "./Components/GameAnswer";
 
 LogBox.ignoreLogs(['Require cycle:'])
 // YellowBox.ignoreWarnings(['Require cycle:']);
@@ -37,23 +43,10 @@ export default function App() {
        // ADD THIS THROW error
         throw error;
       });
-    
+
   });
     return (
         <Tabs/>
-        // <View style={styles.container}>
-        //     <Tabs/>
-        //     <NavigationContainer>
-        //
-        //         <Stack.Navigator initialRouteName="Map">
-        //             <Stack.Screen name="Home" component={MainScreen}/>
-        //             <Stack.Screen name="POIinfo" component={POIinfo} />
-        //             <Stack.Screen options={{headerShown: false}} name="Map" component={Map} />
-        //             <Stack.Screen name="SelectRoute" component={SelectRoutes} />
-        //         </Stack.Navigator>
-        //     </NavigationContainer>
-
-         // </View>
 
     );
 }

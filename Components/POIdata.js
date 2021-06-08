@@ -20,13 +20,7 @@ export const locations =
             markerID:1,
             title: 'Marktplein',
             description:'Het hooggelegen Gooi is een van de oudst bewoonde streken van Nederland. Prehistorische grafheuvels en vondsten uit de Hilversumcultuur getuigen daar nog van. ' +
-                'Water verzamelde zich op de lager gelegen plaatsen, en dat werden drinkplaatsen voor het vee. De dorpen Hilversum, Laren, Blaricum en Bussum zijn rond die drinkplaatsen ontstaan. ' +
-                'Door de arme zandgronden was er voornamelijk schapenhouderij. Vroege Hilversummers leefden eenvoudig. Zo gaven zij hun hoeven nooit een naam en, in tegenstelling tot Blaricummers en ' +
-                'Huizers waar boeren brede, hoge hagen als erfafscheiding plaatsten (vaak doornen of beuken), lieten vrijwel alle Hilversumse boeren het erf open of zetten er een eenvoudig houten hekje omheen. ' +
-                'Bij het woongedeelte hadden zij vaak een eenvoudig grasveldje met een paar bomen om schaduw te bieden. De hoeven hadden ook nooit een versiering, behalve soms ankers die tot krullen gesmeed waren ' +
-                'om het bouwjaar aan te duiden, naar de stijl van sobere, eenvoudige Saksische boerderijen. Markant is dat Hilversummers bijna nooit een verdieping op hun hoeve hadden: ze wilden alles op de begane ' +
-                'grond hebben. De hoeven waren dan ook zeer langgerekt. ' +
-                'Dit fenomeen kwam nog tot zeker 1880 voor, toen het Wilhelmina Hotel geopend werd. De \'oude\' Hilversummers dachten dan ook dat het hotel geen succes zou worden omdat het hotel uit verdiepingen bestond.',
+                'Water verzamelde zich op de lager gelegen plaatsen, en dat werden drinkplaatsen voor het vee. De dorpen Hilversum, Laren, Blaritot zeker 1880 voor, toen het Wilhelmina Hotel geopend werd. De \'oude\' Hilversummers dachten dan ook dat het hotel geen succes zou worden omdat het hotel uit verdiepingen bestond.',
             latitude: 52.227195,
             longitude: 5.176825,
             image: require("../assets/marktplein.jpg"),

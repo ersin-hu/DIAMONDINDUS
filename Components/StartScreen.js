@@ -6,6 +6,7 @@ export default function StartScreen({navigation: {navigate}}) {
     const [inputAge, setInputAge] = useState(null);
 
 
+
     const onStartPress = function () {
 
         if (inputName === null) {
@@ -25,7 +26,7 @@ export default function StartScreen({navigation: {navigate}}) {
             return;
         }
         if (inputName.length > 2 && inputAge < 110 && inputAge > 0 && inputAge != null) {
-            // navigate('Map')
+             navigate('Map')
 
                 let requestOptions = {
                     method: 'GET',
@@ -68,6 +69,7 @@ export default function StartScreen({navigation: {navigate}}) {
     }
 
     return (
+
         <SafeAreaView style={styles.container}>
 
             <Text style={styles.Text}>Welkom bij de <Text style={styles.boldText}>Hilversum History Hunt</Text>. Vandaag

@@ -13,16 +13,13 @@ import {
 } from "react-native";
 import {Feather} from "@expo/vector-icons";
 import {locations} from "./POIdata";
-import {Marker} from "react-native-maps";
-import POIRoute from "./POIRoute";
+
 
 const locationList = ({navigation: {navigate}}) => {
-    const goBack = () => {
-        navigate.goBack();
-    }
     return (
 
         <SafeAreaView style={{backgroundColor: 'white', flex: 1}}>
+
             <ScrollView style={{backgroundColor: 'white'}}>
                 <Text style={{padding: 14, fontSize: 20, fontWeight: 'bold'}}>
                     Overzicht locaties
@@ -34,6 +31,7 @@ const locationList = ({navigation: {navigate}}) => {
                     Hieronder vind je bij elke locatie de bijbehorende vraag. Ook kunt je jouw gegeven antwoorden inzien
                     en wijzigen.
                 </Text>
+
                 {locations.map(locatie => (
                     <SafeAreaView key={Math.random().toString(36).substr(2, 9)}>
 

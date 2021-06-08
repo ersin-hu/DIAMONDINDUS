@@ -6,6 +6,7 @@ import {locations} from "./POIdata";
 import POIRoute from "./POIRoute";
 import {createStackNavigator} from '@react-navigation/stack';
 import WiggleBox from "react-native-wiggle-box";
+import Tabs from "./tabs";
 import * as TaskManager from "expo-task-manager";
 import {LocationGeofencingEventType} from "expo-location";
 
@@ -168,7 +169,6 @@ export default function Map({navigation: {navigate}}) {
 
                 ))}
             </MapView>
-
         </SafeAreaView >
     );
 }
