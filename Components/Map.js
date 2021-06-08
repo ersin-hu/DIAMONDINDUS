@@ -109,7 +109,7 @@ export default function Map({navigation: {navigate}}) {
                     duration={800}
                     type={'wiggle'}
                     >
-                <Text style={styles.text}> Selecteer een route </Text>
+                <Text style={styles.text} onPress={() => onSelectRoute()}> Selecteer een route </Text>
                 </WiggleBox>
             </Pressable>
             ): null}
@@ -120,7 +120,7 @@ export default function Map({navigation: {navigate}}) {
                         duration={800}
                         type={'wiggle'}
                     >
-                    <Text style={styles.text}> Start de route! </Text>
+                    <Text onPress={() => onStartRoute() } style={styles.text}> Start de route! </Text>
                     </WiggleBox>
                 </Pressable>
             ): null}
