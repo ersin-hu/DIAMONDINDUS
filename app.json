@@ -17,16 +17,20 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.devsdiamantindustrie.diamantindustrie",
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+      "package": "com.devsdiamantindustrie.diamantindustrie",
+      "config": {
+        "googleMaps": {
+           "apiKey": "AIzaSyAX3EVsoKVc0xTSnp3SZhtkWWP-ykkt3CA"
+        }
+      }
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
     }
-  }
 }
+
