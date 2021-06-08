@@ -15,7 +15,7 @@ import React, {useState} from 'react';
 import {Feather} from '@expo/vector-icons'
 
 import GameCamera from "./GameCamera";
-import Quiz from "./Quiz";
+// import Quiz from "./Quiz";
 
 //DATA DOORSTUREN
 
@@ -61,7 +61,7 @@ const POIinfo = ({navigation, route}) => {
                     </Pressable>
                     </View>
                     <View>
-                        <Quiz/>
+                        {/*<Quiz/>*/}
                     </View>
                 </ScrollView>
 

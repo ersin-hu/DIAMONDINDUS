@@ -17,6 +17,7 @@ export default function StartScreen({navigation: {navigate}}) {
             alert("Je naam moet minimaal 3 karakters lang zijn")
             return;
         }
+
         if ((inputAge > 110 || inputAge < 1) && inputAge != null) {
             alert("Voer een geldige leeftijd in")
             return;
@@ -147,7 +148,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         zIndex: 2,
         position: 'absolute',
-        bottom: 100,
+        bottom: 50,
         borderColor: "green",
         borderWidth: 3
     }

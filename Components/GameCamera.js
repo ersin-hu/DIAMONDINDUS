@@ -22,7 +22,7 @@ export default function GameCamera({navigation}) {
     }
     return (
         <View style={styles.container}>
-            <Camera style={styles.camera} type={type}>
+            <Camera style={styles.camera} type={type} ratio={"16:9"}>
                 <SafeAreaView style={styles.ImageContainer}>
                     <Image style={styles.GraphImage} source={require('../assets/Muurgrafiek-vullling-tabel-01.png')}/>
 
