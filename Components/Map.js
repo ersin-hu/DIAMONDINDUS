@@ -2,11 +2,8 @@ import React, {useState, useEffect} from 'react';
 import {Platform, Text, View, StyleSheet, Dimensions, Image, Button, Pressable, SafeAreaView} from 'react-native';
 import * as Location from 'expo-location';
 import MapView, {Callout, Marker} from "react-native-maps";
-import POIscreen from "./POIscreen";
 import {locations} from "./POIdata";
 import POIRoute from "./POIRoute";
-// import POIRoute from "./POIRoute";
-import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import WiggleBox from "react-native-wiggle-box";
 import * as TaskManager from "expo-task-manager";
@@ -24,32 +21,22 @@ export default function Map({navigation: {navigate}}) {
 
 
 
-    // const _handleMapRegionChange = function (mapRegion) {
-    //     setLocation({ mapRegion });
-    // };
-
     const _onMapReady = function () {
         setMarginBottom(0)
         setPaddingTop(0)
     }
 
+
     const onSelectRoute = function () {
-        // navigate.setOptions({headerShown: false})
-        // setButtonShow(!buttonShow)
-        // handleMapRegionChange()
         setRouteShow(true)
         setButtonStartRoute(true)
         setButtonSelectRoute(false)
-        // return(
-        //     <POIRoute/>
-        // )
 
     }
 
     const onStartRoute = function (){
         setButtonStartRoute(false)
         console.log("inzoom op locatie nog maken (Twan)")
-
     }
 
     useEffect(() => {
@@ -63,6 +50,7 @@ export default function Map({navigation: {navigate}}) {
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location);
              })();
+
     }, []);
 
     let mapRegion = {
@@ -138,7 +126,6 @@ export default function Map({navigation: {navigate}}) {
 
             {/*<Pressable style={styles.StartRoutebutton} onPress={() => Geofencing() }>*/}
             {/*    <Text style={styles.text}> GEOFENCING </Text>*/}
-
             {/*</Pressable>*/}
 
             <MapView
@@ -174,7 +161,6 @@ export default function Map({navigation: {navigate}}) {
 
                         </Marker>
 
-                        {/*<POIRoute/>*/}
                         {routeShow ? (
                             <POIRoute/>
                         ) : null}

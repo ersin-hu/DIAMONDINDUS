@@ -1,7 +1,6 @@
 import React from 'react'
 import {createStackNavigator} from "@react-navigation/stack";
 import POIinfo from "./POIinfo";
-import locationList from "./locationList";
 import MainScreen from "./MainScreen";
 import Map from "./Map";
 import StartScreen from "./StartScreen";
@@ -25,4 +24,3 @@ const CustomNavigation = () => {
 }
 
 export default CustomNavigation;
-// // export {ScreenNavigator}

@@ -1,14 +1,11 @@
 import React from "react";
 import {StyleSheet, Text, View, Image, TouchableOpacity} from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import MainScreen from "./MainScreen";
-import POIinfo from "./POIinfo";
 import {NavigationContainer} from '@react-navigation/native';
 import POIRoute from "./POIRoute";
 import CustomNavigation from "./CustomNavigation";
-import Map from "./Map";
 import locationList from "./locationList";
-import {ScreenNavigator} from "./CustomNavigation";
+
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {

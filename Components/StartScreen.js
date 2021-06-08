@@ -10,15 +10,19 @@ export default function StartScreen({navigation: {navigate}}) {
 
         if (inputName === null) {
             alert("Vul je naam in")
+            return;
         }
         if (inputName.length < 3) {
             alert("Je naam moet minimaal 3 karakters lang zijn")
+            return;
         }
         if ((inputAge > 110 || inputAge < 1) && inputAge != null) {
             alert("Voer een geldige leeftijd in")
+            return;
         }
         if (inputAge === null) {
             alert("Voer je leeftijd in")
+            return;
         }
         if (inputName.length > 2 && inputAge < 110 && inputAge > 0 && inputAge != null) {
             // navigate('Map')

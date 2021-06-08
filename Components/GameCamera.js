@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, Pressable, Image, SafeAreaView} from 'react-native';
+import {StyleSheet, Text, View, Pressable, Image, SafeAreaView} from 'react-native';
 import {Camera} from 'expo-camera';
 import GameAnswer from "./GameAnswer";
 
@@ -22,30 +22,14 @@ export default function GameCamera({navigation}) {
     }
     return (
         <View style={styles.container}>
-
             <Camera style={styles.camera} type={type}>
                 <SafeAreaView style={styles.ImageContainer}>
                     <Image style={styles.GraphImage} source={require('../assets/Muurgrafiek-vullling-tabel-01.png')}/>
-                {/*</SafeAreaView>*/}
-                {/*/!*<Text style={styles.text}>GRAFIEK HIER</Text>*!/*/}
-                {/*<SafeAreaView style={styles.ButtonContainer}>*/}
+
                     <Pressable style={styles.StartButton} onPress={() => navigation.navigate(GameAnswer)}>
                         <Text style={styles.ButtonText}>Ik weet het!</Text>
                     </Pressable>
                 </SafeAreaView>
-                {/*<View style={styles.buttonContainer}>*/}
-                {/*    <TouchableOpacity*/}
-                {/*        style={styles.button}*/}
-                {/*        onPress={() => {*/}
-                {/*            setType(*/}
-                {/*                type === Camera.Constants.Type.back*/}
-                {/*                    ? Camera.Constants.Type.front*/}
-                {/*                    : Camera.Constants.Type.back*/}
-                {/*            );*/}
-                {/*        }}>*/}
-                {/*        <Text style={styles.text}> Flip </Text>*/}
-                {/*    </TouchableOpacity>*/}
-                {/*</View>*/}
             </Camera>
         </View>
     );
