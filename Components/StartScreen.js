@@ -25,7 +25,7 @@ export default function StartScreen({navigation: {navigate}}) {
             return;
         }
         if (inputName.length > 2 && inputAge < 110 && inputAge > 0 && inputAge != null) {
-            // navigate('Map')
+            navigate('Map')
 
                 let requestOptions = {
                     method: 'GET',
