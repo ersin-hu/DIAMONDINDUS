@@ -8,6 +8,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import WiggleBox from "react-native-wiggle-box";
 import * as TaskManager from "expo-task-manager";
 import {LocationGeofencingEventType} from "expo-location";
+import IntroDialog from "./IntroDialog";
+
 
 export default function Map({navigation: {navigate}}) {
 
@@ -18,7 +20,7 @@ export default function Map({navigation: {navigate}}) {
     const [routeShow, setRouteShow] = useState(false);
     const [buttonSelectRoute, setButtonSelectRoute] = useState(true);
     const [buttonStartRoute, setButtonStartRoute] = useState(false);
-
+    // const [IntroAnimationDialog, setIntroAnimationDialog] = useState(false);
 
 
     const _onMapReady = function () {
@@ -168,7 +170,6 @@ export default function Map({navigation: {navigate}}) {
 
                 ))}
             </MapView>
-
         </SafeAreaView >
     );
 }
