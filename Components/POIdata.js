@@ -27,8 +27,8 @@ export const locations =
                 'om het bouwjaar aan te duiden, naar de stijl van sobere, eenvoudige Saksische boerderijen. Markant is dat Hilversummers bijna nooit een verdieping op hun hoeve hadden: ze wilden alles op de begane ' +
                 'grond hebben. De hoeven waren dan ook zeer langgerekt. ' +
                 'Dit fenomeen kwam nog tot zeker 1880 voor, toen het Wilhelmina Hotel geopend werd. De \'oude\' Hilversummers dachten dan ook dat het hotel geen succes zou worden omdat het hotel uit verdiepingen bestond.',
-            latitude: 52.227195,
-            longitude: 5.176825,
+            latitude: 52.226632,
+            longitude: 5.180905,
             image: require("../assets/marktplein.jpg"),
         },
         {
