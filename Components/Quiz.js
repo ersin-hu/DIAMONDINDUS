@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 
 const Quiz = () => {
+
     return(
         <View style={styles.container}>
             <View style={styles.top}>

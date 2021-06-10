@@ -7,6 +7,14 @@ export const locations =
         latitude: 52.226632,
         longitude: 5.180905,
         image: require("../assets/station.jpg"),
+        question: 'Hoeveel mensen denken jullie dat er tussen 1880 en 1910 naar Hilversum zijn verhuisd?',
+        anwser: 'C',
+        choice:
+        {
+            A: '1673',
+            B: '7229',
+            C: '21844',
+        },
     },
         {
             markerID: 1,
@@ -24,7 +32,15 @@ export const locations =
             description: 'Slijperij “De Volharding” werd in 1906 opgericht (door F.F. Kramer) en is een van de laatste diamantslijperijen die nog in takt is gebleven. Neem een kijkje in deze slijperij. Doe dit door je telefoon voor het gebouw langs te bewegen. In dit gebouw zijn een aantal diamanten verstopt. Hoeveel zijn dit er volgens jou?',
             latitude: 52.22270338140939,
             longitude: 5.1866281197827915,
-            image: require("../assets/gemeentehuis.jpg")
+            image: require("../assets/gemeentehuis.jpg"),
+            question: 'Tot wanneer was deze slijperij actief?',
+            anwser: 'C',
+            choice:
+                {
+                    A: '1673',
+                    B: '1881',
+                    C: '2000',
+                },
         },
         {
             markerID: 3,
@@ -32,7 +48,9 @@ export const locations =
             description: 'Op 30 juli 1897 werd de slijperij de Bloem opgericht door diamantbewerker Jacob Rijnhard Boonacker. Deze slijperij werd vernoemd naar ‘de Bloem’, aangezien de eerste slijperij van Jacob een mislukking was geworden wegens te weinig animo onder diamantbewerkers. Later werd de slijperij overgenomen door de Joodse Meijer Salomons. Neem het op deze locatie tegen elkaar op en ontdek wie het snelste een diamant kan slijpen! Dit doe je door in de volgende minigame zo snel mogelijk over het scherm van je telefoon te vegen.',
             latitude: 52.22007344329583,
             longitude: 5.184664305790834,
-            image: require("../assets/muziekcentrum.jpg")
+            image: require("../assets/muziekcentrum.jpg"),
+            question: 'Slijp zo snel mogelijk de diamand!',
+            imageQuestion: require("../assets/diamond.png"),
         },
         {
             markerID: 4,
@@ -40,32 +58,52 @@ export const locations =
             description: 'Slijperij Flora, opgericht in 1906, is een van de twee slijperijen in Hilversum die na de kolenbezuinigingen in 1916 nog is blijven bestaan. Het pand van deze slijperij is door de jaren heen redelijk intact gebleven. Toch zijn er dingen veranderd. Vul in deze activiteit de oude foto aan door zelf de hedendaagse helft te fotograferen.',
             latitude: 52.221589566799224,
             longitude: 5.165100647702832,
-            image: require("../assets/trompenberg.jpg")
+            image: require("../assets/trompenberg.jpg"),
+            question: 'Zoek de verschillen!',
+            imageQuestion: require("../assets/flora.jpg"),
+            anwser: 'C B A',
+            choice:
+                {
+                    A: 'De muur',
+                    B: 'De ramen',
+                    C: 'De kleur',
+                },
+
         },
         {
             markerID: 5,
             title: 'Ons Gebouw',
-            description: 'Wat is de functie van dit gebouw?  \n' +
-                '\n' +
-                'A) Diamantslijperij voor de socialistische partij  \n' +
-                '\n' +
-                'B) Hoofdkantoor van de socialistische partij (SDAP) \n' +
-                '\n' +
-                'C) Ontmoetingsplaats voor de diamantbewerkers ',
+            description: '',
             latitude: 52.219291291419694,
             longitude: 5.16769920644054,
-            image: require("../assets/huisje.jpg")
+            image: require("../assets/huisje.jpg"),
+            question: 'Zoek de verschillen!',
+            anwser: 'B',
+            choice:
+                {
+                    A: 'Diamantslijperij voor de socialistische partij',
+                    B: 'Hoofdkantoor van de socialistische partij (SDAP)',
+                    C: 'Ontmoetingsplaats voor de diamantbewerkers',
+                },
+            afterAnswer: 'De Socialistische Democratische Arbeiders Partij (SDAP) zette zich in voor de rechten van de arbeiders van de diamantindustrie. ' +
+                'Het pand “Ons Gebouw” is gefinancierd door vrijwillige donaties van leden. '
         },
         {
             markerID: 6,
             title: 'Woningbouwcomplex Verschuyl',
-            description: 'In deze straat woonde veel diamantbewerkers, waaronder ik. Met mijn gezin woonde ik in dit kleine huisje. Het was wel een beetje krap. Met hoeveel woonden wij hier?\n' +
-                'A) 3 \n' +
-                'B) 6 \n' +
-                'C) 9',
+            description: 'In deze straat woonde veel diamantbewerkers, waaronder ik. Met mijn gezin woonde ik in dit kleine huisje. Het was wel een beetje krap. ',
             latitude: 52.214314593777594,
             longitude:  5.170058600181996,
-            image: require("../assets/zonnestraal.jpg")
+            image: require("../assets/zonnestraal.jpg"),
+            question: 'Met hoeveel woonden zij hier?',
+            anwser: 'C',
+            choice:
+                {
+                    A: '3',
+                    B: '6',
+                    C: '9',
+                },
+            afterAnswer: 'Samen met mijn vrouw en 7 kinderen woonde ik hier. Met elkaar deelden we 2 slaapkamers.'
         },
         {
             markerID: 7,
