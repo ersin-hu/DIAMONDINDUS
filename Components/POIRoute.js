@@ -9,7 +9,7 @@ import {Image} from "react-native";
 
 // const origin = {latitude: 52.226632, longitude: 5.180905};
 // const destination = {latitude: 52.224442, longitude: 5.181236};
-// const GOOGLE_MAPS_APIKEY = 'AIzaSyAX3EVsoKVc0xTSnp3SZhtkWWP-ykkt3CA';
+// const GOOGLE_MAPS_APIKEY = 'AIzaSyD7ShEkMdp0p2kdyE0PKxPvZVaky4794qo';
 
 
 
