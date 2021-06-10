@@ -121,24 +121,24 @@ return (
     <SafeAreaView style={styles.container}>
         {buttonSelectRoute ? (
             <Pressable style={styles.SelectRoutebutton} onPress={() => onSelectRoute()}>
-                <WiggleBox
-                    active={true}
-                    duration={800}
-                    type={'wiggle'}
-                >
+                {/*<WiggleBox*/}
+                {/*    active={true}*/}
+                {/*    duration={800}*/}
+                {/*    type={'wiggle'}*/}
+                {/*>*/}
                     <Text style={styles.text} onPress={() => onSelectRoute()}> Selecteer een route </Text>
-                </WiggleBox>
+                {/*</WiggleBox>*/}
             </Pressable>
         ) : null}
         {buttonStartRoute ? (
             <Pressable style={styles.StartRoutebutton} onPress={() => onStartRoute()}>
-                <WiggleBox
-                    active={true}
-                    duration={800}
-                    type={'wiggle'}
-                >
+                {/*<WiggleBox*/}
+                {/*    active={true}*/}
+                {/*    duration={800}*/}
+                {/*    type={'wiggle'}*/}
+                {/*>*/}
                     <Text onPress={() => onStartRoute()} style={styles.text}> Start de route! </Text>
-                </WiggleBox>
+                {/*</WiggleBox>*/}
             </Pressable>
         ) : null}
 
