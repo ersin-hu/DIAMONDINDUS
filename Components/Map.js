@@ -21,7 +21,6 @@ export default function Map({navigation: {navigate}}) {
     const [buttonStartRoute, setButtonStartRoute] = useState(false);
 
 
-
     const _onMapReady = function () {
         setMarginBottom(0)
         setPaddingTop(0)
@@ -35,7 +34,7 @@ export default function Map({navigation: {navigate}}) {
 
     }
 
-    const onStartRoute = function (){
+    const onStartRoute = function () {
         setButtonStartRoute(false)
         console.log("inzoom op locatie nog maken (Twan)")
     }
@@ -50,7 +49,7 @@ export default function Map({navigation: {navigate}}) {
 
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location);
-             })();
+        })();
 
     }, []);
 
@@ -99,78 +98,108 @@ export default function Map({navigation: {navigate}}) {
 
     const Stack = createStackNavigator();
 
-    return (
+    //
+    // const Data = (marker) => {
+    //
+    //     return (
+    //         {
+    //             title: marker.title,
+    //             description: marker.description,
+    //             image: marker.image,
+    //             Question: marker.question,
+    //             imageQuestion: marker.imageQuestion,
+    //             answer: marker.anwser,
+    //             choiceA: marker.choice.A,
+    //             choiceB: marker.choice.B,
+    //             choiceC: marker.choice.C
+    //         }
+    //     );
+    // }
 
-        <SafeAreaView style={styles.container}>
-                {buttonSelectRoute ? (
+return (
+
+    <SafeAreaView style={styles.container}>
+        {buttonSelectRoute ? (
             <Pressable style={styles.SelectRoutebutton} onPress={() => onSelectRoute()}>
                 <WiggleBox
                     active={true}
                     duration={800}
                     type={'wiggle'}
-                    >
-                <Text style={styles.text} onPress={() => onSelectRoute()}> Selecteer een route </Text>
+                >
+                    <Text style={styles.text} onPress={() => onSelectRoute()}> Selecteer een route </Text>
                 </WiggleBox>
             </Pressable>
-            ): null}
-            {buttonStartRoute ? (
-                <Pressable style={styles.StartRoutebutton} onPress={() => onStartRoute() }>
-                    <WiggleBox
-                        active={true}
-                        duration={800}
-                        type={'wiggle'}
+        ) : null}
+        {buttonStartRoute ? (
+            <Pressable style={styles.StartRoutebutton} onPress={() => onStartRoute()}>
+                <WiggleBox
+                    active={true}
+                    duration={800}
+                    type={'wiggle'}
+                >
+                    <Text onPress={() => onStartRoute()} style={styles.text}> Start de route! </Text>
+                </WiggleBox>
+            </Pressable>
+        ) : null}
+
+        {/*<Pressable style={styles.StartRoutebutton} onPress={() => Geofencing() }>*/}
+        {/*    <Text style={styles.text}> GEOFENCING </Text>*/}
+        {/*</Pressable>*/}
+
+        <MapView
+            style={{
+                width: Dimensions.get("window").width,
+                height: Dimensions.get("window").height,
+                marginBottom: marginBottom
+            }}
+            onMapReady={_onMapReady}
+            showsMyLocationButton={true}
+            showsCompass={true}
+            showsUserLocation
+            region={mapRegion}
+            // onRegionChange={handleMapRegionChange}
+        >
+            {locations.map(marker => (
+                <SafeAreaView key={Math.random().toString(36).substr(2, 9)}>
+
+
+                    <Marker
+                        coordinate={{
+                            latitude: marker.latitude,
+                            longitude: marker.longitude
+                        }}
+
+                        title={marker.title}
+                        description={marker.description}
+                        onPress={() => navigate('POIinfo', marker)}
+
+                            // {
+                            //     title: marker.title,
+                            //     description: marker.description,
+                            //     image: marker.image,
+                            //     Question: marker.question,
+                            //     imageQuestion: marker.imageQuestion,
+                            //     answer: marker.anwser,
+                            //     choiceA: marker.choice.A,
+                            //     choiceB: marker.choice.B,
+                            //     choiceC: marker.choice.C
+                            // })}
                     >
-                    <Text onPress={() => onStartRoute() } style={styles.text}> Start de route! </Text>
-                    </WiggleBox>
-                </Pressable>
-            ): null}
-
-            {/*<Pressable style={styles.StartRoutebutton} onPress={() => Geofencing() }>*/}
-            {/*    <Text style={styles.text}> GEOFENCING </Text>*/}
-            {/*</Pressable>*/}
-
-            <MapView
-                style={{
-                    width: Dimensions.get("window").width,
-                    height: Dimensions.get("window").height,
-                    marginBottom: marginBottom
-                }}
-                onMapReady={_onMapReady}
-                showsMyLocationButton={true}
-                showsCompass={true}
-                showsUserLocation
-                region={mapRegion}
-                // onRegionChange={handleMapRegionChange}
-            >
-                {locations.map(marker => (
-                    <SafeAreaView  key={Math.random().toString(36).substr(2, 9)}>
+                        <Image style={{width: 30, height: 30, alignItems: "center"}}
+                               source={require('../assets/Diamand.png')}/>
 
 
-                        <Marker
-                            coordinate={{
-                                latitude: marker.latitude,
-                                longitude: marker.longitude
-                            }}
+                    </Marker>
 
-                            title={marker.title}
-                            description={marker.description}
-                            onPress={() => navigate('POIinfo', {data: [marker.title, marker.description, marker.image]})}
-                        >
-                            <Image style={{width: 30, height: 30, alignItems: "center"}}
-                                   source={require('../assets/Diamand.png')}/>
+                    {routeShow ? (
+                        <POIRoute/>
+                    ) : null}
+                </SafeAreaView>
 
-
-                        </Marker>
-
-                        {routeShow ? (
-                            <POIRoute/>
-                        ) : null}
-                    </SafeAreaView >
-
-                ))}
-            </MapView>
-        </SafeAreaView >
-    );
+            ))}
+        </MapView>
+    </SafeAreaView>
+);
 }
 
 const styles = StyleSheet.create({

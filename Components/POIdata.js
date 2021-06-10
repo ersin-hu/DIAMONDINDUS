@@ -59,7 +59,7 @@ export const locations =
             latitude: 52.221589566799224,
             longitude: 5.165100647702832,
             image: require("../assets/trompenberg.jpg"),
-            question: 'Zoek de verschillen!',
+            question: 'Wat is het verschil met de oude slijperij?',
             imageQuestion: require("../assets/flora.jpg"),
             anwser: 'C B A',
             choice:
