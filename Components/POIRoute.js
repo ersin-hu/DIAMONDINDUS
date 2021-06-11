@@ -9,10 +9,36 @@ import MapViewDirections from 'react-native-maps-directions';
 const GOOGLE_MAPS_APIKEY = 'AIzaSyD7ShEkMdp0p2kdyE0PKxPvZVaky4794qo';
 
 const POIRoute = () => {
+
+    const destination = {latitude: 52.200529, longitude: 5.152435,};
+    const [location, setLocation] = useState(null);
+    const [errorMsg, setErrorMsg] = useState(null);
+    // const origin = {latitude: location.coords.latitude, longitude: location.coords.longitude };
+    const [coordinates, setCoordinates] = useState(null);
+
+    useEffect(() => {
+        (async () => {
+            let {status} = await Location.requestForegroundPermissionsAsync();
+            if (status !== 'granted') {
+                setErrorMsg('Permission to access location was denied');
+                return;
+            }
+
+            let location = await Location.getCurrentPositionAsync({});
+            setLocation(location);
+
+            console.log("console.log locatie" + location.coords.latitude)
+            console.log("console.log locatie" + location.coords.longitude)
+
+            setCoordinates({latitude: location.coords.latitude, longitude: location.coords.longitude })
+        })();
+
+    }, []);
+
     return (
         locations.map(() => (
-            <MapViewDirections
-                origin={origin}
+            <MapViewDirections key={ Math.random().toString(36).substr(2, 9) }
+                origin={coordinates}
                 destination={destination}
                 apikey={GOOGLE_MAPS_APIKEY} // google API key
                 mode={"WALKING"}
