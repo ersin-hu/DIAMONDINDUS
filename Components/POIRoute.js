@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {Platform, Text, View, StyleSheet, Dimensions} from 'react-native';
 import * as Location from 'expo-location';
 import MapView, {Callout, Marker, Polyline} from "react-native-maps";
@@ -21,16 +21,24 @@ const POIRoute = () => {
             let {status} = await Location.requestForegroundPermissionsAsync();
             if (status !== 'granted') {
                 setErrorMsg('Permission to access location was denied');
-                return;
             }
-
-            let location = await Location.getCurrentPositionAsync({});
-            setLocation(location);
-
-            console.log("console.log locatie" + location.coords.latitude)
-            console.log("console.log locatie" + location.coords.longitude)
-
-            setCoordinates({latitude: location.coords.latitude, longitude: location.coords.longitude })
+            let location = await Location.watchPositionAsync(
+                {
+                    timeInterval: 300,
+                },
+                (location) => {
+                    setLocation(location);
+                    console.log(location);
+                    setCoordinates({latitude: location.coords.latitude, longitude: location.coords.longitude})
+                }
+            );
+            // let location = await Location.getCurrentPositionAsync({});
+            // setLocation(location);
+            //
+            // console.log("console.log locatie" + location.coords.latitude)
+            // console.log("console.log locatie" + location.coords.longitude)
+            //
+            // setCoordinates({latitude: location.coords.latitude, longitude: location.coords.longitude })
         })();
 
     }, []);
