@@ -5,8 +5,7 @@ import MapView, {Callout, Marker, Polyline} from "react-native-maps";
 import {locations} from "./POIdata"
 import MapViewDirections from 'react-native-maps-directions';
 
-const origin = {latitude: 52.2292, longitude: 5.1669};
-const destination = {latitude: 52.200529, longitude: 5.152435,};
+
 const GOOGLE_MAPS_APIKEY = 'AIzaSyD7ShEkMdp0p2kdyE0PKxPvZVaky4794qo';
 
 const POIRoute = () => {
