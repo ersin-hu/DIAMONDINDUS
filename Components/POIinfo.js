@@ -21,24 +21,35 @@ import GameCamera from "./GameCamera";
 const POIinfo = ({navigation, route}) => {
     // if
     //     POIData bevat choice show const quiz else show de andere return
+
     const Quiz = () => {
-        if (route.params.choice !== undefined) {
+
+        if (route.params.choice, route.params.correctA !== undefined) {
             return (
                 <View style={quizStyle.container}>
                     <View style={quizStyle.top}>
-                        <Text style={quizStyle.question}>{route.params.choice.A}</Text>
+                        <Text style={quizStyle.question}>{route.params.question}</Text>
                     </View>
+                    {/*Popup maken*/}
                     <View style={quizStyle.options}>
+
                         <TouchableOpacity style={quizStyle.optionButton}>
-                            <Text style={quizStyle.option}>A: {route.params.choice.B}</Text>
+                            <Text style={quizStyle.option} onPress={() => {
+                                alert(route.params.correctA)
+                            }}>A: {route.params.choice.A} </Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={quizStyle.optionButton}>
-                            <Text style={quizStyle.option}>B: {route.params.choice.C}</Text>
+                            <Text style={quizStyle.option} onPress={() => {
+                                alert(route.params.correctB)
+                            }}>B: {route.params.choice.B}</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={quizStyle.optionButton}>
-                            <Text style={quizStyle.option}>C: {route.params.choice.A}</Text>
+                            <Text style={quizStyle.option} onPress={() => {
+                                alert(route.params.correctC)
+                            }}>C: {route.params.choice.C}</Text>
                         </TouchableOpacity>
                     </View>
+
 
                 </View>
             );
@@ -46,6 +57,7 @@ const POIinfo = ({navigation, route}) => {
             return null
         }
     }
+
     const goBack = () => {
         navigation.goBack();
     }

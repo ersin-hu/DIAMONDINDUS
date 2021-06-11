@@ -8,7 +8,9 @@ export const locations =
         longitude: 5.180905,
         image: require("../assets/station.jpg"),
         question: 'Hoeveel mensen denken jullie dat er tussen 1880 en 1910 naar Hilversum zijn verhuisd?',
-        anwser: 'C',
+        correctA: 'Helaas niet het juiste antwoord!',
+        correctB: 'Helaas niet het juiste antwoord!',
+        correctC: 'Dit is het juiste antwoord!',
         choice:
         {
             A: '1673',
@@ -34,7 +36,9 @@ export const locations =
             longitude: 5.1866281197827915,
             image: require("../assets/gemeentehuis.jpg"),
             question: 'Tot wanneer was deze slijperij actief?',
-            anwser: 'C',
+            correctA: 'Helaas niet het juiste antwoord!',
+            correctB: 'Helaas niet het juiste antwoord!',
+            correctC: 'Dit is het juiste antwoord!',
             choice:
                 {
                     A: '1673',
@@ -61,7 +65,9 @@ export const locations =
             image: require("../assets/trompenberg.jpg"),
             question: 'Wat is het verschil met de oude slijperij?',
             imageQuestion: require("../assets/flora.jpg"),
-            anwser: 'C B A',
+            correctA: 'Dit is het juiste antwoord!',
+            correctB: 'Helaas niet het juiste antwoord',
+            correctC: 'Helaas niet het juiste antwoord',
             choice:
                 {
                     A: 'De muur',
@@ -78,7 +84,9 @@ export const locations =
             longitude: 5.16769920644054,
             image: require("../assets/huisje.jpg"),
             question: 'Zoek de verschillen!',
-            anwser: 'B',
+            correctA: 'Helaas niet het juiste antwoord!',
+            correctB: 'Dit is het juiste antwoord!',
+            correctC: 'Helaas niet het juiste antwoord',
             choice:
                 {
                     A: 'Diamantslijperij voor de socialistische partij',
@@ -96,7 +104,9 @@ export const locations =
             longitude:  5.170058600181996,
             image: require("../assets/zonnestraal.jpg"),
             question: 'Met hoeveel woonden zij hier?',
-            anwser: 'C',
+            correctA: 'Helaas niet het juiste antwoord!',
+            correctB: 'Helaas niet het juiste antwoord!',
+            correctC: 'Dit is het juiste antwoord!',
             choice:
                 {
                     A: '3',
