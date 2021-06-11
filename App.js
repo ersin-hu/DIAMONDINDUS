@@ -14,39 +14,42 @@ import {
     StatusBar, YellowBox,
 } from "react-native";
 
-import { LogBox } from 'react-native';
+import {LogBox} from 'react-native';
 import CustomNavigation from "./Components/CustomNavigation";
 import POIinfo from "./Components/POIinfo";
 import Map from "./Components/Map";
 import StartScreen from "./Components/StartScreen";
 import GameCamera from "./Components/GameCamera";
 import GameAnswer from "./Components/GameAnswer";
+import Geofencing from "./Components/Geofencing";
 
 LogBox.ignoreLogs(['Require cycle:'])
 // YellowBox.ignoreWarnings(['Require cycle:']);
 
 
-
 export default function App() {
 
-  React.useEffect(() => {
-    //do something on load
-    console.log("Hey, I've loaded up");
+    React.useEffect(() => {
+        //do something on load
+        console.log("Hey, I've loaded up");
 
-    fetch('http://192.168.68.120:8080/api/poi/Names')
-    .then((response) => response.json())
-    .then(todoItems => {
-      console.log(todoItems);
-    })
-    .catch((error) => {
-      console.log('There has been a problem with your fetch operation: ' + error.message);
-       // ADD THIS THROW error
-        throw error;
-      });
+        fetch('http://192.168.68.120:8080/api/poi/Names')
+            .then((response) => response.json())
+            .then(todoItems => {
+                console.log(todoItems);
+            })
+            .catch((error) => {
+                console.log('There has been a problem with your fetch operation: ' + error.message);
+                // ADD THIS THROW error
+                throw error;
+            });
 
-  });
+    });
     return (
-        <Tabs/>
+
+            <Tabs/>
+
+
 
     );
 }

@@ -9,6 +9,7 @@ import WiggleBox from "react-native-wiggle-box";
 import Tabs from "./tabs";
 import * as TaskManager from "expo-task-manager";
 import {LocationGeofencingEventType} from "expo-location";
+import Geofencing from "./Geofencing";
 
 export default function Map({navigation: {navigate}}) {
 
@@ -74,47 +75,7 @@ export default function Map({navigation: {navigate}}) {
         };
     }
 
-    // const Geofencing = function() {
-    //     console.log("geofencing")
-    //     // console.log(region)
-    //     Location.startGeofencingAsync("YOUR_TASK_NAME", ({data: {eventType, region}, error}) => {
-    //         region = ({
-    //             latitude: 52.226632,
-    //             longitude: 5.180905,
-    //             radius: 25,
-    //         });
-    //
-    //         if (error) {
-    //             // check `error.message` for more details.
-    //             return console.log("error message regel 97");
-    //         }
-    //         if (eventType === LocationGeofencingEventType.Enter) {
-    //             console.log("You've entered region:", region);
-    //         } else if (eventType === LocationGeofencingEventType.Exit) {
-    //             console.log("You've left region:", region);
-    //         }
-    //     }).then(console.log("fucked up"));
-    // }
 
-    const Stack = createStackNavigator();
-
-    //
-    // const Data = (marker) => {
-    //
-    //     return (
-    //         {
-    //             title: marker.title,
-    //             description: marker.description,
-    //             image: marker.image,
-    //             Question: marker.question,
-    //             imageQuestion: marker.imageQuestion,
-    //             answer: marker.anwser,
-    //             choiceA: marker.choice.A,
-    //             choiceB: marker.choice.B,
-    //             choiceC: marker.choice.C
-    //         }
-    //     );
-    // }
 
 return (
 
@@ -142,10 +103,7 @@ return (
             </Pressable>
         ) : null}
 
-        {/*<Pressable style={styles.StartRoutebutton} onPress={() => Geofencing() }>*/}
-        {/*    <Text style={styles.text}> GEOFENCING </Text>*/}
-        {/*</Pressable>*/}
-
+       <Geofencing/>
         <MapView
             style={{
                 width: Dimensions.get("window").width,
