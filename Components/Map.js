@@ -12,7 +12,7 @@ import {LocationGeofencingEventType} from "expo-location";
 import Geofencing from "./Geofencing";
 
 export default function Map({navigation: {navigate}}) {
-
+    const [state, setState] = useState([]);
     const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState(null);
     const [marginBottom, setMarginBottom] = useState(1)
@@ -21,6 +21,23 @@ export default function Map({navigation: {navigate}}) {
     const [buttonSelectRoute, setButtonSelectRoute] = useState(true);
     const [buttonStartRoute, setButtonStartRoute] = useState(false);
 
+
+
+    const requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+    };
+
+    const getData = async () => {
+        const response = await fetch("http://81.169.131.185:8080/api/poi/", requestOptions)
+        const data = await response.json()
+        console.log(data[0].address)
+        setState(data);
+    }
+
+    useEffect(() => {
+        getData();
+    }, []);
 
     const _onMapReady = function () {
         setMarginBottom(0)
@@ -117,18 +134,18 @@ return (
             region={mapRegion}
             // onRegionChange={handleMapRegionChange}
         >
-            {locations.map(marker => (
+            {state.map(marker => (
                 <SafeAreaView key={Math.random().toString(36).substr(2, 9)}>
 
 
                     <Marker
                         coordinate={{
-                            latitude: marker.latitude,
-                            longitude: marker.longitude
+                            latitude: parseFloat(marker.lat),
+                            longitude: parseFloat(marker.long)
                         }}
 
-                        title={marker.title}
-                        description={marker.description}
+                        title={marker.name}
+                        description={marker.text}
                         onPress={() => navigate('POIinfo', marker)}
 
                             // {

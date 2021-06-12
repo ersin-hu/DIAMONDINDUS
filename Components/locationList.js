@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {
     Image,
     ImageBackground,
@@ -15,7 +15,29 @@ import {Feather} from "@expo/vector-icons";
 import {locations} from "./POIdata";
 
 
+
+
+
+
 const locationList = ({navigation: {navigate}}) => {
+    const [state, setState] = useState([]);
+
+    let requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+    };
+
+    const getData = async () => {
+        const response = await fetch("http://81.169.131.185:8080/api/poi/", requestOptions)
+        const data = await response.json()
+        console.log(data[0].address)
+        setState(data);
+    }
+
+    useEffect(() => {
+        getData();
+    }, []);
+
     return (
 
         <SafeAreaView style={{backgroundColor: 'white', flex: 1}}>
@@ -32,16 +54,16 @@ const locationList = ({navigation: {navigate}}) => {
                     en wijzigen.
                 </Text>
 
-                {locations.map(locatie => (
+                {state.map(locatie => (
                     <SafeAreaView key={Math.random().toString(36).substr(2, 9)}>
 
                         <View >
                             <Image style={{width: 30, height: 30, alignItems: "center"}}
-                                   source={require('../assets/Beschikbaar-01.png')} onPress={() => navigate('POIinfo', {data: [locatie.title, locatie.description, locatie.image]})}/>
-                            <Text onPress={() => navigate('POIinfo', {data: [locatie.title, locatie.description, locatie.image]})}>{locatie.title}</Text>
-                            <Text onPress={() => navigate('POIinfo', {data: [locatie.title, locatie.description, locatie.image]})}>{" " + locatie.adres}</Text>
+                                   source={require('../assets/Beschikbaar-01.png')} onPress={() => navigate('POIinfo', {data: [locatie.name, locatie.text/*, locatie.image*/]})}/>
+                            <Text onPress={() => navigate('POIinfo', {data: [locatie.name, locatie.text/*, locatie.image*/]})}>{locatie.name}</Text>
+                            <Text onPress={() => navigate('POIinfo', {data: [locatie.name, locatie.text/*, locatie.image*/]})}>{" " + locatie.address}</Text>
                             <Image style={{width: 30, height: 30, alignItems: "center"}}
-                                   source={locatie.image} onPress={() => navigate('POIinfo', {data: [locatie.title, locatie.description, locatie.image]})}/>
+                                   source={locatie.image} onPress={() => navigate('POIinfo', {data: [locatie.name, locatie.text/*, locatie.image*/]})}/>
                             <Pressable style={styles.StartButton} onPress={() => console.log("link nog maken")}>
                                 <Text style={styles.ButtonText}>Toon vraag</Text>
                             </Pressable>
